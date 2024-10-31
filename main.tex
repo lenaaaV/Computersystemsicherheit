@@ -1,0 +1,271 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+\usepackage{amsmath} % Für mathematische Formeln (optional)
+\usepackage{xcolor}  % Für Farbdefinitionen
+\usepackage{soul}    % Für Textmarkierung
+
+% Seitenlayout
+\geometry{top=2.5cm, left=2cm, right=2cm}
+
+% Kopf- und Fußzeile
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{Computersystemsicherheit 2024/25}}
+\fancyhead[R]{\textbf{Lena Thuy Trang Vo}}
+\fancyfoot[C]{\thepage}
+
+% Farben (Mintgrün)
+\definecolor{lightpastelmint}{rgb}{0.74, 0.96, 0.84}
+\definecolor{darkpastelmint}{rgb}{0.47, 0.85, 0.62}
+
+% Titel-Formatierung
+\titleformat{\section}{\large\color{darkpastelmint}\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\color{darkpastelmint}\bfseries}{}{0em}{}
+
+% Definition-Box
+\newtcolorbox{Fall}{
+  colback=lightpastelmint, % Hintergrundfarbe
+  colframe=darkpastelmint, % Rahmenfarbe
+  fonttitle=\bfseries,
+  title=Fall,
+  boxrule=0.8mm, % Dicke des Rahmens
+  width=\textwidth, % Breite der Box
+  before=\vspace{0.5cm}, % Abstand vor der Box
+  after=\vspace{0.5cm}, % Abstand nach der Box
+  sharp corners=south % Scharfe Ecken unten
+}
+\definecolor{highlightmint}{rgb}{0.74, 0.96, 0.84}
+% Befehl für das Hervorheben
+\sethlcolor{highlightmint} % Setze die Highlight-Farbe
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge \textbf{Computersystemsicherheit}}\\[1.5cm]
+    {\large \textit{Lena Thuy Trang Vo}}\\[0.5cm]
+    {\large \textit{Wintersemester 2024/25}}\\[2cm]
+
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Thema 1: Einführung}
+\subsection{Themenübersicht}
+\begin{itemize}
+    \item Begriffsbedeutung
+    \item Warum ist Sicherheit wichtig?
+    \item Fallbeispiele für Sicherheitsvorfälle
+    \item Sicherheitsprinzipien
+    \begin{itemize}
+        \item Kenne die Angreifer 
+        \item Berücksichtige menschliche Faktoren
+        \item Sicherheit ist wirtschaftliche Abwägung 
+        \item Detektieren falls nicht verhinderbar
+        \item Defense in depth (gestaffelte Verteidigung)
+        \item Fail-safe Standard
+    \end{itemize}
+\end{itemize}
+\subsection{Begriffsbedeutung}
+\textbf{Was bedeutet Sicherheit?}\\[3mm]
+\textbf{\hl{Betriebssicherheit / Safety}} 
+\begin{itemize}
+    \item Schutz gegen \hl{Fehler/Unfälle}
+    \item Fehler meist \hl{unabsichtig} verursacht
+    \item Gegenmaßnahme: Verifikation, Testen 
+\end{itemize}
+\textbf{\hl{Angriffsicherheit/Security}}
+\begin{itemize}
+    \item Schutz gegen \hl{worst-case Angreifer}
+    \item meist Schadabsicht
+    \item Verifikation und Testen hilft wenig
+\end{itemize}
+\textbf{Security und Safety können im Konflikt zueinander stehen}\\
+Beispiel Notausgang 
+\begin{itemize}
+    \item \hl{Safety:} Im Notfall können Personen aus dem Gebäude 
+    \item \hl{Security:} Für Gebäudeschutz am besten gar keine Tür
+\end{itemize}
+\textbf{Sicherheitseigenschaften}\\
+Sicherheit kann vieles bedeuten...
+\begin{enumerate}
+    \item \hl{Vertraulichkeit} von Daten/Nachrichten (z.B. von Whatsapp Nachrichten)
+    \begin{itemize}
+        \item Sicherstellung, dass das System keine unautorisierte Informationsgewinnung ermöglicht
+    \end{itemize}
+    \item \hl{Anonymität} von Benutzern (z.B. beim Surfen im Web)
+    \item \hl{Integrität} von Daten/Berechnungen (z.B. bei Überweisungen im Online-Banking)
+    \begin{itemize}
+        \item Gewährleistung, dass nicht autorisierte Subjekte ein Objekt nicht unbemerkt ändern können
+    \end{itemize}
+    \item \hl{Authentizität} von Dateien (z.B. Software-Updates)
+    \begin{itemize}
+        \item Echtheit und Glaubwürdigkeit eines Objektes, die kryptografisch überprüfbar ist 
+    \end{itemize}
+    \item \hl{Verfügbarkeit} von Diensten (z.B. des Stromnetzes)
+    \begin{itemize}
+        \item Gewährleistung, dass autorisierte Subjekte nicht in der Funktionalität beeinträchtigt werden
+    \end{itemize}
+\end{enumerate}
+\subsection{Wie können wir uns schützen? Allgemeine Sicherheitsprinzipien}
+\textbf{Sicherheitsprinzipien}
+\begin{enumerate}
+    \item Kenne die Angreifer
+    \item Berücksichtige menschliche Faktoren
+    \item wirtschafltiche Faktoren beeinflussen Sicherheit 
+    \item Detektieren falls nicht verhinderbar
+    \item Defense in depth (gestaffelte Verteidigung)
+    \item Fail-safe Standards
+\end{enumerate}
+\hl{\textbf{1. Kenne die Angreifer}}\\[2mm]
+Um ein effektives \hl{Bedrohungsmodell} zu entwickeln, ist es wichtig, die \textbf{potenziellen Angreifer} und deren \textbf{Motivationen} zu verstehen.\\[3mm]
+\textbf{Ressourcen:}
+\begin{itemize}
+    \item Individuum
+    \item Organisierte Gruppen
+    \item Terroristen
+    \item staatlich geförderte Organisationen
+\end{itemize}
+\textbf{Motivation:}
+\begin{itemize}
+    \item Geld
+    \item politische Maßnahmen
+    \item Vergeltung
+    \item aus Spaß
+\end{itemize}
+\textbf{Annahmen über Angreifer sind schwer zu treffen}
+\begin{itemize}
+    \item \hl{rechtzeitiges Erkennen von Angriffen schwierig:} Angreifer kann unbemerkt mit dem System interagieren
+    \item \hl{Angreifer kennt das System:} Welches Betriebssystem wird verwendet, welche Hardware? (kennt Schwachstellen)
+    \item  \hl{Kann Glück haben:} bei Chance 1:1.000.000 kann der Angreifer es 1.000.000 mal Probieren
+\end{itemize}
+
+\noindent \hl{\textbf{2. Berücksichtige menschliche Faktoren}}\\[3mm]
+Einschränkung der Sicherheit durch menschliches Verhalten möglich
+\begin{itemize}
+    \item als \textbf{Benutzer:in}
+    \begin{itemize}
+        \item neigen dazu, Sicherheitsmechanismen zu umgehen, wenn diese die Nutzung erschweren
+        \item Beispiel: Wahl einfacher und wiederverwendeter Passwörter
+    \end{itemize}
+    \item als \textbf{Programmierer:in}
+    \begin{itemize}
+        \item Programmierer können Fehler machen, die Sicherheitslücken schaffen
+        \item benutzen Tools, die erkauben Fehler zu machen (z.B. Sprache ohne Typsicherheit)
+    \end{itemize}
+    \item als \textbf{Angreifer:in}
+    \begin{itemize}
+        \item Angreifer nutzen oft menschliche Eigenschaften wie Vertrauen oder Leichtgläubigkeit aus, um Informationen zu stehlen oder Zugang zu Systemen zu erlangen (Social Engineering)
+    \end{itemize}
+\end{itemize}
+Ergo: alle verwendeten Tools und Systeme sollten narrensicher sein.\\
+
+\noindent\textbf{\hl{3. wirtschaftliche Faktoren beeinflussen Sicherheit}}
+\begin{itemize}
+    \item organisierte Cyberkriminialität nimmt zu
+    \item Angrifffsziele von organisierter Cyberkriminalität: \textbf{wirtschaftliche Interessen}
+    \begin{itemize}
+        \item sei es zur direkten finanziellen Bereicherung oder um einem Wettbewerber oder Land zu schaden
+    \end{itemize}
+    \item aus Sicht der angreifenden Partei:
+    \begin{itemize}
+        \item Angriff teurer als Belohnung $\longrightarrow$ kein Angriffsversuch
+    \end{itemize}
+    \item aus Sicht der verteidigenden Partei:
+    \begin{itemize}
+        \item viel Sicherheit kostet viel Geld
+        \item Abwägung zwischen Kosten-/Nutzen 
+        \begin{itemize}
+            \item Nutzen der Sicherheitsmaßnahmen proportional zu Kosten eines erfolgreichen Angriffs
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\noindent\hl{\textbf{4. Detektieren, falls nicht verhinderbar}}
+\begin{enumerate}
+    \item \textbf{Abschrecken:} Einen Angriff abschrecken, bevor dieser stattfindet.
+    \item \textbf{Verhindern:} Falls  Angriff stattfindet, verhindere dessen Erfolg
+    \item \textbf{Detektieren:} Stelle fest, falls ein Angriff stattgefunden hat
+    \begin{itemize}
+        \item Falls nicht verhinderbar, dann wenigstens feststellen, dass ein Angriff stattgefunden hat
+        \item es ist essenziell, ihn schnell zu erkennen, um den Schaden zu minimieren
+    \end{itemize}
+    \item \textbf{Reagieren:} Reaktion auf stattgefundenen Angriff
+    \begin{itemize}
+        \item Detektion ohne Reaktion ist nutzlos: Es ist entscheidend, nach der Erkennung eines Angriffs sofortige Maßnahmen zu ergreifen, um weitere Schäden zu verhindern.
+    \end{itemize}
+\end{enumerate}
+\textbf{\hl{5. Defense in Depth}}
+\begin{itemize}
+    \item verschiedene Sicherheitsmaßnahmen implementieren
+    \item schichtweiser Aufbau
+    \begin{itemize}
+        \item Sicherheitsmaßnahmen übereinander legen, sodass ein Angreifer alle Schichten durchbrechen muss, um erfolgreich zu sein.
+    \end{itemize}
+    \item Sicherheit ist oft weniger als die Summe aller Teile
+    \begin{itemize}
+        \item Trotz der Vielzahl an Schutzmaßnahmen kann die Sicherheit oft nur so stark sein wie das schwächste Glied in der Kette.
+    \end{itemize}
+\end{itemize}
+\textbf{\hl{6. Fail-Safe Standards}}\\[3mm]
+Dieses Prinzip sorgt dafür, dass ein System bei einem \textbf{Ausfall} oder einer Anomalie in einen Zustand übergeht, der den \textbf{geringstmöglichen Schaden} verursacht.\\[3mm]
+\textbf{Beispiele:}\\[2mm]
+\hl{mechanisches Zugsignal:}\\
+ Bei einem mechanischen Zugsignal fällt das Signal auf "Halt", wenn das Zugseil reißt. Dies stellt sicher, dass Züge bei einem technischen Defekt automatisch gestoppt werden und keine Gefahr entsteht.\\
+
+ \noindent\hl{elektronisches Nummernschloss:}\\
+ Bei einem elektronischen Nummernschloss ist es nicht immer einfach zu entscheiden, was der sichere Zustand ist. Bei einem Stromausfall könnte das Schloss entweder offen bleiben, um den Zugang zu ermöglichen, oder geschlossen bleiben, um unbefugten Zutritt zu verhindern. Die Entscheidung hängt von der spezifischen Anwendung und den damit verbundenen Risiken ab.
+
+ \section{Thema 2: Einführung Kryptographie}
+ \subsection{Themenübersicht}
+ \begin{itemize}
+     \item Was ist Kryptographie?
+     \item Ziele der Kryptographie
+     \item Klassiche Chiffren
+     \item Ansätze der modernen Kryptographie
+ \end{itemize}
+ \subsection{Was ist Kryptographie?}
+ Kryptographie ist die Wissenschaft der \textbf{Verschlüsselung und Entschlüsselung} von Informationen. Sie dient dazu, Daten und Kommunikation vor unbefugtem Zugriff und Manipulation zu schützen. 
+\begin{itemize}
+    \item unzählige Anwendungen in der Praxis
+    \begin{itemize}
+        \item grundlegender Baustein jedes Sicherheitssytems
+        \item z.B. ohne Kryptographie keine Sicherheit im Internet
+    \end{itemize}
+\end{itemize}
+\subsection{Klassische vs. moderne Kryptographie}
+\hl{\textbf{Klassische Kryptographie}}
+\begin{itemize}
+    \item  bezieht sich auf ältere Verschlüsselungsmethoden, die hauptsächlich zur \textbf{sicheren Kommunikation über unsichere Kanäle} verwendet wurden
+    \item Hauptanwendung: Militär
+\end{itemize}
+
+\noindent\textbf{\hl{Moderne Kryptographie}}
+\begin{itemize}
+    \item  bietet \textbf{starke Sicherheitsgarantien für Daten und Berechnungen}, selbst in Anwesenheit eines Angreifers
+    \item wird in nahezu jedem Lebensbereich angewendet
+\end{itemize}
+
+\subsection{Ziele der Kryptographie}
+\begin{enumerate}
+    \item \hl{Vertraulichkeit:}
+    \begin{itemize}
+        \item Angreifer kann den Inhalt der Nachricht \textbf{nicht lernen}
+        \item nur autorisierte Parteien haben Zugang zu den Informationen, während unbefugte Dritte ausgeschlossen werden 
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
+
