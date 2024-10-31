@@ -1,0 +1,32 @@
+name: LaTeX-to-PDF
+
+on:
+  push:
+    branches:
+      - main  # Passe dies an deinen Branch an
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write  # Erlaubt dem Workflow, Änderungen im Repository vorzunehmen
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex  # Passe den Dateinamen deiner Haupt-LaTeX-Datei an
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Hier wird der automatisch generierte Token verwendet
+          publish_dir: ./  # Verzeichnis, in dem sich das PDF befindet
+          publish_branch: gh-pages
