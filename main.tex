@@ -79,7 +79,7 @@
     \end{itemize}
 \end{itemize}
 \subsection{Begriffsbedeutung}
-\textbf{Was bedeutet Sicherheit?}\\[3mm]
+\subsubsection{Was bedeutet Sicherheit?}
 \textbf{\hl{Betriebssicherheit / Safety}} 
 \begin{itemize}
     \item Schutz gegen \hl{Fehler/Unfälle}
@@ -98,7 +98,7 @@ Beispiel Notausgang
     \item \hl{Safety:} Im Notfall können Personen aus dem Gebäude 
     \item \hl{Security:} Für Gebäudeschutz am besten gar keine Tür
 \end{itemize}
-\textbf{Sicherheitseigenschaften}\\
+\subsubsection{Sicherheitseigenschaften}
 Sicherheit kann vieles bedeuten...
 \begin{enumerate}
     \item \hl{Vertraulichkeit} von Daten/Nachrichten (z.B. von Whatsapp Nachrichten)
@@ -119,7 +119,7 @@ Sicherheit kann vieles bedeuten...
         \item Gewährleistung, dass autorisierte Subjekte nicht in der Funktionalität beeinträchtigt werden
     \end{itemize}
 \end{enumerate}
-\subsection{Wie können wir uns schützen? Allgemeine Sicherheitsprinzipien}
+\subsubsection{Wie können wir uns schützen? Allgemeine Sicherheitsprinzipien}
 \textbf{Sicherheitsprinzipien}
 \begin{enumerate}
     \item Kenne die Angreifer
@@ -246,13 +246,13 @@ Dieses Prinzip sorgt dafür, dass ein System bei einem \textbf{Ausfall} oder ein
     \end{itemize}
 \end{itemize}
 \subsection{Klassische vs. moderne Kryptographie}
-\hl{\textbf{Klassische Kryptographie}}
+\subsubsection{Klassische Kryptographie}
 \begin{itemize}
     \item  bezieht sich auf ältere Verschlüsselungsmethoden, die hauptsächlich zur \textbf{sicheren Kommunikation über unsichere Kanäle} verwendet wurden
     \item Hauptanwendung: Militär
 \end{itemize}
 
-\noindent\textbf{\hl{Moderne Kryptographie}}
+\subsubsection{Moderne Kryptographie}
 \begin{itemize}
     \item  bietet \textbf{starke Sicherheitsgarantien für Daten und Berechnungen}, selbst in Anwesenheit eines Angreifers
     \item wird in nahezu jedem Lebensbereich angewendet
@@ -273,6 +273,151 @@ Dieses Prinzip sorgt dafür, dass ein System bei einem \textbf{Ausfall} oder ein
         \item sicherstellen, dass der Absender einer Nachricht wirklich derjenige ist, für den er sich ausgibt
     \end{itemize}
 \end{enumerate}
+
+\subsection{Schlüssel}
+\begin{itemize}
+    \item \textbf{Kurzer Schlüssel:} Kryptoverfahren verwenden zufällig gewählten, kurzen Schlüssel
+    \item \textbf{Symmetrische Kryptographie:} Gleicher Schlüssel zum Ver- und Entschlüsseln
+    \item \textbf{Asymmetrische Kryptographie:} 
+    \begin{itemize}
+        \item öffentlicher Schlüssel: z.B. im Internet veröffentlicht
+        \item geheimer Schlüssel: nur einzelnen Nutzern eines Kryptoverfahren bekannt
+    \end{itemize}
+\end{itemize}
+\subsection{Kerkhoff'sches Prinzip}
+\begin{itemize}
+    \item ein Kryptoverfahren soll sicher bleiben, selbst wenn der Angreifer den Kryptoalgorithmus kennt
+    \item alles ist öffentlich außer ein \hl{kurzer Schlüssel $k$}, der \hl{zufällig} gewählt wurde
+\end{itemize}
+\textbf{Warum Kerckhoff?}
+\begin{itemize}
+    \item in kommerziell eingesetzten Produkten ist es schwar, die Spezifikation geheim zu halten
+    \begin{itemize}
+        \item \hl{Reverse Engineering:} Algorithmen können rekonstruiert werden 
+    \end{itemize}
+
+    \item kurze Schlüssel sind einfacher zu \textbf{schützen}, zu \textbf{erzeugen} und \textbf{auszutauschen}
+    \item die Sicherheit des Designs kann \textbf{öffentlich analysiert} werden
+\end{itemize}
+
+\hl{Kerkhoff's Grundsatz verletzt} $\Longrightarrow$ Sicherheit bei Verschleierung
+\subsection{Klassische Chiffren}
+\textbf{\hl{Shift-Chiffre}}
+\begin{itemize}
+    \item zyklischer Shift jedes Buchstaben um \hl{$k$} Stellen im Alphabet
+    \item Caesars Chiffre: \hl{$k=3$}
+    \item alle Schlüssel ausprobieren bei Angriff $\longrightarrow$ \textbf{Brute-Force-Angriff}
+\end{itemize}
+
+\noindent\textbf{\hl{Erweiterte Shift-Chiffre}}\\[2.5mm]
+Benutze \hl{Wort als Schlüssel} und verschiebe jeden Buchstaben, um die durch den Schlüssel gegebene \hl{Differenz}\\[3.5mm]
+\textbf{\hl{Substitutionschiffre}}
+\begin{itemize}
+    \item ist eine Erweiterung der Shift-Chiffre, bei der jeder Buchstabe des Alphabets durch einen anderen Buchstaben ersetzt wird, basierend auf einer \textbf{beliebigen Permutation} des Alphabets
+    \item keine feste Verschiebung
+    \item Anzahl an Schlüsseln: $26! \approx 2^{88}$
+    $\Longrightarrow$ zu viele Schlüssel für ausprobieren
+\end{itemize}
+\subsection{Moderne Kryptographie}
+\subsubsection{Anwendung Heute}
+\begin{itemize}
+    \item Sichere Kommunikation im Internet
+    \item Digitale Zertifikate
+    \item Sichere Datenspeicherung, z.B. für die Cloud
+    \item Zugriffskontrolle, z.B. als Autoschlüssel
+    \item E-Commerce und Online-Banking
+    \item Digitale Signaturen
+    \item Hashfunktionen
+    \item ...
+\end{itemize}
+\subsubsection{Ansatz der modernen Kryptographie}
+\begin{enumerate}
+    \item \textbf{Formale Definition:}
+    \begin{itemize}
+        \item \hl{Ziel des Angreifers:} z.B bei Verschlüsselung sollte Angreifer nichts über Klartext lernen
+        \item \hl{Angreifermodell:} Was kann der Angreifer tun und sehen (z.B. Angreifer sieht nur Chiffretexte)
+    \end{itemize}
+
+    \item \textbf{Konstruktion:}
+    \begin{itemize}
+        \item z.B.Konstruktion komplexer Kryptoverfahren aus einfachen Kryptoprimitiven
+    \end{itemize}
+
+    \item \textbf{Sicherheitsbeweis:}
+    \begin{itemize}
+        \item \textbf{Annahme hält} $\Longrightarrow$ Kryptoverfahren ist sicher gemäß der formalen Definition (z.B. zahlentheoretische Annahme)
+        \item \hl{Reduktionsbeweis:} Angreifer gegen Kryptoverfahren $\Longrightarrow$ Annahme hält nicht
+    \end{itemize}
+\end{enumerate}
+\subsubsection{Was sind kryptographische Annahmen?}
+\begin{itemize}
+    \item Kryptoverfahren nutzen Annahmen, auf denen Sicherheit basiert
+    \begin{itemize}
+        \item stellt sich heraus, dass \hl{Annahme falsch ist} oder \hl{effizient gelöst} werden kann, so wäre das Verfahren \textbf{nicht mehr sicher}
+    \end{itemize}
+    \item \textbf{Einwegfunktion:} in eine Richtung einfach zu berechnen, in die andere praktisch unmöglich
+    \item Annahme, praktisch unmöglich, Eingabe aus Ausgabe zu berechnen
+\end{itemize}
+
+\noindent\textbf{Häufig genutzte Annahmen:}
+\begin{itemize}
+    \item Primfaktorzerlegung großer natürlicher Zahlen ist schwer
+    \item Berechnung des Diskreten Logarithmus ist schwer
+    \item Allgemein: Schwierigkeit mathematischer Probleme
+\end{itemize}
+
+\subsubsection{Kryptographische Primitive und Konstruktionen}
+\hl{Kryptograhische Primitive}
+\begin{itemize}
+    \item ist eine \textbf{abstrakte, fundamentale Funktion} mit \textbf{spezifischen kryptographischen Eigenschaften}
+    \item \textbf{Beispiele:} Blockchiffren, Hashfunktionen, Digitale Signaturen etc.
+\end{itemize}
+
+\noindent\hl{Kryptograhische Konstruktion}
+\begin{itemize}
+    \item beschreibt, wie \textbf{kryptographische Primitive instanziiert} und miteinander kombiniert werden, um \textbf{komplexe kryptographische Systeme} zu erstellen
+    \item \textbf{Beispiele:} AES, SHA-256, Schnorr-Signaturen etc.
+\end{itemize}
+
+\section{Thema 3: Symmetrische Kryptographie}
+\subsection{Themenübersicht}
+\begin{itemize}
+    \item Was ist symmetrische Kryptographie?
+    \item Definition Symmetrische Chiffre
+    \item One-Time-Pad
+    \item Block-Chiffren
+    \item Modes of Operation
+    \item Kryptographische Hashfunktionen
+    \item Message Authentication Codes (MACs)
+    \item Authenticated Encryption 
+\end{itemize}
+\hl{Symmetrische Kryptographie:} Es gibt nur \textbf{einen} Schlüssel für alle Algorithmen
+\subsection{Definition Symmetrischer Chiffren}
+\subsubsection{Schutzziel}
+Welches kryptographische Schutzziel möchten wir mit symmetrischen Chiffren erreichen?
+\begin{itemize}
+    \item \textbf{Vertraulichkeit:} Angreifer kann den Inhalt der Nachricht nicht lernen
+\end{itemize}
+\subsubsection{Funktionale Definition}
+\begin{itemize}
+    \item beschreibt \textbf{Input/Output-Verhalten} der Algorithmen
+    \item Algorithmen: Gen, Enc, Dec
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/enc.png}
+        \caption{Funktionale Definition}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \item \textbf{Gen:} generiert einen zufälligen Schlüssel $k$, der später sowohl für die Verschlüsselung als auch für die Entschlüsselung verwendet wird
+    \item \textbf{Enc (Verschlüsselung):} nimmt den Klartext $m$ und Schlüssel $k$ als Eingabe und erzeugt einen Chiffretext $c$
+    \item \textbf{Dec (Entschlüsselung):} nimmt den Chiffretext und denselben geheimen Schlüssel als Eingabe und stellt den ursprünglichen Text wieder her
+\end{itemize}
+\hl{Korrektheit:}\\
+Die Entschlüsselung eines gültigen Chiffretextes resultiert in die original verschlüsselte Nachricht\\[3mm]
+$Dec (k,Enc(k,m)) = m$ für alle Nachrichten $m$ und Schlüssel $k \longleftarrow Gen$\\[3mm]
+\hl{Effizienz:} Verschlüsselung und Entschlüsselung sind effizient ( 1 GB/s)
+
 
 \end{document}
 
