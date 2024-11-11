@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1730738917.77464 "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" "main.pdf" "main" 1730738918.55767 0
-  "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" 1730738917.56437 18615 d70821e9149cbc429db45e5a80f2f0ad ""
+["pdflatex"] 1731325893.67367 "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" "main.pdf" "main" 1731325895.2071 0
+  "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" 1731325891.76452 27306 c56a1d4125b34ab978907a99a45b3644 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -14,9 +14,11 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -123,9 +125,14 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1716369439 8221422 b656a154497c543415c32fd23e2161d4 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "img/enc.png" 1730737326.84895 96123 251cbda88771557a82f716fa4783f4d6 ""
-  "main.aux" 1730738918.50015 3433 8be472988bb159dfb30dacb0c55dbf7e "pdflatex"
-  "main.tex" 1730738917.56437 18615 d70821e9149cbc429db45e5a80f2f0ad ""
-  "main.toc" 1730738918.50101 2077 39dfff7950497de5c652a0ca226cddfe "pdflatex"
+  "img/ind-cca.png" 1731320894.54931 519688 1bd144e5d31ecb9583cd9081bbb03286 ""
+  "img/ott-key.png" 1731324143.36719 135820 462a8c9b2df0f7ac4a38614ad4516ac9 ""
+  "img/sich-ott.png" 1731323792.43018 324107 3f888f9d9776f8e9ae3e2a196732569e ""
+  "img/sich.png" 1730817061.99464 388410 79405faa617809dafcd3cb9784a41c29 ""
+  "img/xor.png" 1731322384.64018 172138 37049bb4b45e55400c83fa6d60c13843 ""
+  "main.aux" 1731325895.144 5779 49a1c9a33b030e0a882ceae710e63928 "pdflatex"
+  "main.tex" 1731325891.76452 27306 c56a1d4125b34ab978907a99a45b3644 ""
+  "main.toc" 1731325895.14531 3011 f92c3bb836e72a351924ac4ebd5f3f4a "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -418,6 +418,198 @@ Die Entschlüsselung eines gültigen Chiffretextes resultiert in die original ve
 $Dec (k,Enc(k,m)) = m$ für alle Nachrichten $m$ und Schlüssel $k \longleftarrow Gen$\\[3mm]
 \hl{Effizienz:} Verschlüsselung und Entschlüsselung sind effizient ( 1 GB/s)
 
+\subsubsection{Sicherheitsdefinition}
+\begin{itemize}
+    \item \textbf{Ziel des Angreifers:} Was ist ein erfolgreicher Angriff?
+    \item \hl{naive Option:} Angreifer lernt den Schlüssel $k$ nicht
+    \item in der \hl{Kryptographie:} Angreifer lernt \textbf{nichts Neues} über $m$
+\end{itemize}
+
+\noindent\textbf{Angreifermodell:}
+\begin{itemize}
+    \item beschreibt die Fähigkeiten und Ressourcen des Angreifers
+    \item Angreifer lernt \textbf{nur Chiffretext} (known ciphertext attack), z.B. durch Abhören des Kanals
+    \item Angreifer lernt \textbf{Paare von Klartexten/Chiffretexten} (known plaintext/ciphertext attack), z.B. bestimmter Teil der verschlüsselten Nachricht kann bekannt sein
+    \item Angreifer \textbf{wählt Klartexte und lernt zugehörige Chiffretexte} (chosen plaintext attack), z.B. Angteifer überzeugt Challenger davon, Nachrichten seiner Wahl zu verschlüsseln
+\end{itemize}
+\subsubsection{Sicherheitsspiel (IND-CPA)}
+\begin{itemize}
+    \item Sicherheit wird in der Kryptographie durch sein \textbf{Spiel} zwischen \textbf{Angreifer} und \textbf{Challenger} definiert
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich.png}
+    \caption{Sicherheitsspiel}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{\hl{Sicherheit:}}\\[2mm] Symmetrische Chiffre ist \textbf{IND-CPA sicher}, falls alle \textbf{effizienten} Angreifer das Sicherheitsspiel maximal mit der Wahrscheinlichkeit $\approx \frac{1}{2}$ gewinnen können\\[3mm]
+\textbf{Was bedeutet effizient?}
+\begin{itemize}
+    \item \hl{effizient:} Laufzeit \textbf{polynomiell} in der Schlüssellänge
+    \item \hl{nicht effizient:} Laufzeit \textbf{exponentiell} in der Schlüssellänge
+\end{itemize}
+
+\subsubsection{Bietet IND-CPA die stärkste Sicherheit?}
+\begin{itemize}
+    \item Nein, es gibt noch stärkere
+    \item IND-CPA bietet grundlegenden Schutz gegen \hl{passive Angriffe} (nur Zugriff auf Verschlüsselungen)
+    \item Gefahr : \hl{Chosen Ciphertext Angriff}
+    \begin{itemize}
+        \item Angreifer hat auch Zugang zu \textbf{Entschlüsselung} von (bestimmten) Chiffretexten
+        \item Angreifer kann diese Informationen nutzen, um \textbf{sensitive Informationen} zu erlangen
+    \end{itemize}
+
+    \item Beispiel: \textbf{Padding Orakel Angriff}
+    \begin{itemize}
+        \item Angreifer kann durch gezielte \textbf{Entschlüsselungsanfragen} Informationen über den Klartext gewinnen
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Stärkere Sicherheit: IND-CCA}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ind-cca.png}
+    \caption{Sicherheitsspiel}
+    \label{fig:enter-label}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Chosen Ciphertext Angriff}
+    \item geht einen Schritt weiter als IND-CPA und schützt auch vor Angreifern, die zusätzlich die Möglichkeit haben, \textbf{bestimmte Chiffretexte zu entschlüsseln}
+\end{itemize}
+\subsubsection{Unterschied zwischen IND-CPA und IND-CCA}
+\begin{itemize}
+    \item \hl{IND-CPA Sicherheit:}
+    \begin{itemize}
+        \item schützt vor Angriffen, bei denen Angriefer \textbf{Verschlüsselungen} seiner Wahl erzeugen kann
+        \item reicht nicht aus, wenn Angreifer auch \textbf{Zugriff auf Entschlüsselungen} hat
+    \end{itemize}
+
+    \item \hl{IND-CCA Sicherheit:}
+    \begin{itemize}
+        \item stärkere Sicherheit
+        \item schützt selbst dann, wenn Angreifer zusätzlich \textbf{Entschlüsselungen anfordern} kann (außer dem zu entschlüsselnden Chiffretext)
+    \end{itemize}
+
+    \item \hl{Fazit}
+    \begin{itemize}
+        \item \hl{IND-CCA Sicherheit ist notwendig}, wenn Angreifer auf \textbf{Entschlüsselungsoperationen zugreifen kann}
+    \end{itemize}
+\end{itemize}
+
+\noindent\textbf{Wie zeigen wir (Un-)sicherheit?}
+\begin{itemize}
+    \item \hl{Unsicheres Verfahren}
+    \begin{itemize}
+        \item konstruiere effizienten Angreifer, der mit mit Wahrscheinlichkeit signifikant größer als $\frac{1}{2}$
+    \end{itemize}
+
+    \item \hl{Sicheres Verfahren:}
+    \begin{itemize}
+        \item Zeige, dass \textbf{alle Angreifer} das Sicherheitsspiel mit Wahrscheinlichkeit $\approx \frac{1}{2}$ gewinnen
+        \item Reduktionsbeweis auf Annahmen
+    \end{itemize}
+\end{itemize}
+
+\subsection{One-Time-Pad Verschlüsselung}
+\textbf{Wiederholung: XOR}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/xor.png}
+    \caption{XOR}
+    \label{fig:enter-label}
+\end{figure}
+\subsubsection{One-Time-Pad}
+\begin{itemize}
+    \item auch häufig \textbf{Vernam-Chiffre} genannt
+    \item symmetrisches Verschlüsselungsverfahren
+    \item zur Verschlüsselung von \textbf{Bitstrings der Länge $n$}
+\end{itemize}
+\hl{Funktionsweise}
+\begin{itemize}
+    \item \hl{Gen:} in zufälliger \textbf{Schlüssel k} wird aus der Menge $\{0,1\}^n$ erzeugt, wobei $n$ die Länge des Klartextes m ist
+    \begin{itemize}
+        \item Schlüssel muss mindestens so lang wie der Klartext sein und darf nur einmal verwendet werden
+    \end{itemize}
+    \hl{Enc:} Verschlüsselung erfolgt durch eine \textbf{XOR-Operation} zwischen dem \textbf{Klartext m} und dem \textbf{Schlüssel k}\\[2mm]
+        $\text{Enc}(k, m) = k \oplus m$ \qquad $\Longrightarrow$ Ergebnis ist der \textbf{Chiffretext c}
+
+
+    \item \hl{Dec:} um den Chiffretext zu \textbf{entschlüsseln} wird erneut eine \textbf{XOR-Operation} zwischen dem \textbf{Chiffretext c} und dem \textbf{Schlüssel k} durchgeführt\\[2mm]
+        $ \text{Dec}(k, c) = k \oplus c $
+
+    
+    \item da bein XOR die Operation \textbf{invertierbar ist ($x \oplus x  = 0$)}, erhält man den ursprünglichen Klartext zurück.
+\end{itemize}
+
+\subsubsection{Sicherheit}
+\begin{itemize}
+    \item beschränktes Sicherheitsspiel: Angriefer erhält \textbf{keinen Zugriff auf Chiffretexte}
+    \item Angreifer gewinnt das Sicherheitsspiel, wenn $b = b'$
+    \item Analyse ergibt: Perfekte Sicherheit - $c*$ gibt keine Information über $m_b$ preis
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich-ott.png}
+    \caption{beschränktes Sicherheitsspiel}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Schlüssel nur einmal verwenden}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ott-key.png}
+    \caption{One-Time-Pad Schlüssel nur einmal verwenden}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{itemize}
+    \item Lernen des XORs kann nützliche Informationen preisgeben
+    \item z.B. welche Bits von $m_0$ und $m_1$ gleich sind
+    \item wenn $m_0$ bekannt ist, dann ist auch $m_1$ bekannt (und vice versa)
+    \item \textbf{Moral:} zur Verschlüsselung jeder Nachricht muss ein neuer zufälliger Schlüssel gewählt werden
+\end{itemize}
+
+\subsubsection{Venona-Projekt: Risiken von One-Time-Pads}
+\begin{itemize}
+    \item \textbf{Venona-Projekt (1943-1980)}
+    \begin{itemize}
+        \item \hl{Ziel:} Entschlüsselung sowjetischer Kommunikation durch USA und Großbritannien
+        \item Sowjetische Nachrichten wurden mit \hl{One-Time-Pads verschlüsselt}
+        \item Fehler: Schlüssel wurden unter Zeitdruck \hl{mehrfach verwendet}
+    \end{itemize}
+
+    \item \textbf{Risiken von One-Time-Pads}
+    \begin{itemize}
+        \item \hl{Mehrfachnutzung von Schlüsseln:} Führt dazu, dass Angreifer durch XOR der Chiffretexte Informationen über die Klartexte gewinnen können
+        \item US-Geheimdienste nutzten diesen Fehler, um sowjetische Nachrichten zu entschlüsseln
+    \end{itemize}
+
+    \item \textbf{Lektion:} One-Time-Pad ist nur sicher, wenn jeder \textbf{Schlüssel einmalig} verwendet wird
+\end{itemize}
+
+\subsubsection{Nachteile von One-Time-Pad}
+\begin{enumerate}
+    \item Schlüssel ist \hl{so lang wie Nachricht}
+    \begin{itemize}
+        \item für große Mengen von Daten müssen \textbf{lange zufällige Schlüssel} gespeichert und ausgestauscht werden
+        \item gute Zufälligkeit zu erzeugen, ist sehr aufwendig
+    \end{itemize}
+
+
+    \item Schlüssel kann \hl{nur einmal benutzt} werden
+    \begin{itemize}
+        \item mehrfache Verwendung kann etwa über Klartexte preisgeben
+        \item für viele Nachrichten benötigt man \hl{viele Schlüssel}
+    \end{itemize}
+
+
+    \item Sicheheit im \hl{beschränkten Angreifermodell}
+    \begin{itemize}
+        \item Chiffretext-Only Angriffe
+    \end{itemize}
+\end{enumerate}
 
 \end{document}
+
 
