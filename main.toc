@@ -25,3 +25,14 @@
 \contentsline {subsection}{\numberline {3.2}Definition Symmetrischer Chiffren}{8}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Schutzziel}{8}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Funktionale Definition}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Sicherheitsdefinition}{8}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}Sicherheitsspiel (IND-CPA)}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.5}Bietet IND-CPA die stärkste Sicherheit?}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.6}Stärkere Sicherheit: IND-CCA}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.7}Unterschied zwischen IND-CPA und IND-CCA}{10}{}%
+\contentsline {subsection}{\numberline {3.3}One-Time-Pad Verschlüsselung}{10}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}One-Time-Pad}{10}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Sicherheit}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Schlüssel nur einmal verwenden}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}Venona-Projekt: Risiken von One-Time-Pads}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.5}Nachteile von One-Time-Pad}{12}{}%
