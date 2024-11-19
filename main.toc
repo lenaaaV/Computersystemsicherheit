@@ -36,3 +36,16 @@
 \contentsline {subsubsection}{\numberline {3.3.3}Schlüssel nur einmal verwenden}{11}{}%
 \contentsline {subsubsection}{\numberline {3.3.4}Venona-Projekt: Risiken von One-Time-Pads}{11}{}%
 \contentsline {subsubsection}{\numberline {3.3.5}Nachteile von One-Time-Pad}{12}{}%
+\contentsline {section}{\numberline {4}Übung 1}{12}{}%
+\contentsline {subsection}{\numberline {4.1}Aufgabe 1: Wissensfragen}{12}{}%
+\contentsline {subsection}{\numberline {4.2}Aufgabe 2: IND-CPA vs. IND-CCA}{13}{}%
+\contentsline {section}{\numberline {5}Thema 3: Symmetrische Kryptographie - Teil }{13}{}%
+\contentsline {subsection}{\numberline {5.1}Data Encryption Standard (DES)}{13}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}DES: Angriffe}{14}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Triple-DES}{14}{}%
+\contentsline {subsection}{\numberline {5.2}Advanced Encryption Standard (AES)}{14}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Angriffe in der Praxis}{15}{}%
+\contentsline {subsection}{\numberline {5.3}Modes of Operation}{15}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Electronic Code Book (ECB) Modus}{15}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Cipher Block Chaining (CBC) Modus}{16}{}%
+\contentsline {subsubsection}{\numberline {5.3.3}Counter Modus (CTR)}{18}{}%

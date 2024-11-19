@@ -609,7 +609,300 @@ $Dec (k,Enc(k,m)) = m$ für alle Nachrichten $m$ und Schlüssel $k \longleftarro
         \item Chiffretext-Only Angriffe
     \end{itemize}
 \end{enumerate}
+\section{Übung 1}
+\subsection{Aufgabe 1: Wissensfragen}
+\begin{enumerate} [label=(\alph*)]
+    \item Beschreiben Sie die Unterschiede zwischen Safety und Security.
+    \begin{itemize}
+        \item \textbf{Safety (Betriebssicherheit)}
+        \begin{itemize}
+            \item Schutz gegen Fehler/Unfälle
+            \item Fehler meist unbeabsichtigt
+            \item mögliche Gegenmaßnahmen: Verifikation und Testen
+        \end{itemize}
 
+        \item \textbf{Security (Angriffssicherheit)}
+        \begin{itemize}
+            \item Schutz gegen worst-case-Angreifer
+            \item meist Schadabsicht
+            \item Verifikation und Testen hilft wenig
+        \end{itemize}
+    \end{itemize}
+
+    \item Nennen und beschreiben Sie drei Sicherheitseigenschaften.
+    \begin{itemize}
+        \item \hl{Vertraulichkeit} (Angreifer kann Nachricht nicht lernen)
+        \item \hl{Anonymität} (Eigenschaft, dass eine Person oder Gruppe nicht identifiziert werden kann)
+        \item \hl{Integrität} (Angreifer kann Nachricht nicht ändern, ohne dass Änderung erkannt wird)
+        \item \hl{Authentizität} (Angreifer kann nicht behaupten, dass eine Nachricht von Alive kam, die diese nicht gesendet hat)
+        \item \hl{Verfügbarkeit} (Eigenschaft eines Systems Zugriff für autorisierte Benutzer auf Daten und Dienste zu erlauben)
+    \end{itemize}
+
+    \item Beschreiben Sie das Sicherheitsprinzip der fail-safe Standards. Geben Sie ein
+    Beispiel an.\\[2mm]
+    Dieses Prinzip sorgt dafür, dass ein System bei einem Ausfall oder einer Anomalie in einen Zustand übergeht,
+der den geringstmöglichen Schaden verursacht.\\[2mm]
+Beispiel: mechanisches Zugsignal (aus VL)
+
+    \item Was sagt das Kerckhoffs’sche Prinzip aus?\\[2mm]
+    Ein Kryptoverfahren soll sicher bleiben, selbst wenn der Angreifer den Kryptoalgorithmus kennt. Die Sicherheit des Kryptoverfahrens beruht auf der Geheimhaltung des Schlüssels.
+\end{enumerate}
+
+\subsection{Aufgabe 2: IND-CPA vs. IND-CCA}
+\begin{enumerate} [label=(\alph*)]
+    \item \textbf{Szenario 1:} Sichere Kommunikation im Web: Um Nachrichten zwischen einem
+    Webbrowser und einem Webserver abzusichern, wird ein Verschlusselungsverfahren ¨
+    eingesetzt. Die Kommunikation soll dabei auch gegen einen Angreifer, der die
+    Kommunikationskan¨ale kontrolliert, abgesichert werden.\\[2.5mm]
+    In diesem Szenario hat der Angreifer möglicherweise die Kontrolle über den Kommunikationskanal. Das bedeutet, er könnte \textbf{nicht nur Nachrichten abfangen} (passiver Angriff), sondern auch aktiv Nachrichten modifizieren oder selbst verschlüsselte Nachrichten an den Server senden (\textbf{aktiver Angriff}).
+    Da die IND-CPA jedoch nur vor passiven Angriffen schützt, empfiehlt sich hier eher die \textbf{IND-CCA Sicherheit}.\\[3mm]
+    Musterlösung:\\[2mm]
+    Ein Angreifer, der die Kommunikationskanäle kontrolliert, kann Chiffretexte abfangen, erneut senden oder modifizieren. Der Chiffretext wird dabei vom Empfänger entschlüsselt und der Empfänger führt mögliche Aktionen aus. In diesem Szenario ist IND-CPA Sicherheit nicht ausreichend und wir brauchen IND-CCA Sicherheit des Verschlüsselungsverfahren. Der Empfänger stellt in diesem Szenario eine Art Entschlüsselungsorakel dar. Auch wenn der Empfänger die entschlüsselte Nachricht nicht an den Angreifer zurück schickt, kann der Angreifer möglicherweise Informationen aus den Aktionen des Empfängers ableiten.(z.B. der Webserver führt eine Transaktion aus). Um einen solchen Angriff zu verhindern, benötigt es eine stärkere Sicherheit als IND-CPA Sicherheit.
+    \item\textbf{Szenario 2:} Data at Rest: In einem Unternehmen werden sensible Daten auf einer Festplatte gespeichert. Diese Informationen sollen durch ein Verschlüsselungsverfahren
+    abgesichert werden, sodass selbst bei einem Diebstahl der Festplatte die Daten geheim bleiben.\\[2mm]
+    Musterlösung:\\[2mm]
+    In diesem Szenario ist IND-CPA Sicherheit ausreichend. Sollte ein Angreifer im Besitz einer Festplatte kommen, dann hat er keinen Zugriff auf ein Entschlüsselungsorakel (Unter der Annahme, dass der Schlüssel nicht auf der Festplatte gespeichert ist).
+    Der Angreifer kann lediglich versuchen die Klartexte zu erraten oder andere Online-Angriffe wie einen Bruce-Force-Angriff durchzuführen.
+
+\end{enumerate}
+\section{Thema 3: Symmetrische Kryptographie - Teil }
+\subsection{Data Encryption Standard (DES)}
+\begin{itemize}
+    \item symmetrischer Verschlüsselungsalgorithmus, der in den 1970er Jahren von IBM im Auftrag des National Institute of Standards and Technology (NIST) entwickelt wurde 
+    \item \textbf{Blockchiffre}, die Daten in \text{Blöcken} von \textbf{64 Bit} verschlüsselt und entschlüsselt
+    \item \textbf{Blocklänge}: \hl{n=64} Bits
+    \item \textbf{Schlüssellänge:} \hl{k=56} Bits
+\end{itemize}
+\textbf{Verschlüsselung und Entschlüsselung}
+\begin{itemize}
+    \item Verschlüsselung erfolgt mit einem Schlüssel $K \in \{0,1\}^{56}$ und einer Nachricht $M \in\{0,1\}^{64}$
+    \item das Ergebnis ist ein Chiffrat $C \in \{ 0,1\}^{64}$
+    \item die Entschlüsselung funktioniert ähnlich, wobei derselbe Schlüssel K verwendet wird, um das Chiffrat C wieder in die ursprüngliche Nachricht M zu konvertieren
+\end{itemize}
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Des.png}
+    \caption{Des}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{DES: Angriffe}
+\hl{Theoretische Angriffe:}
+\begin{itemize}
+    \item \textbf{Differenzielle Kryptoanalyse}
+    \item \textbf{Lineare Kryptoanlyse}
+    \item DES bietet Schutz gegen Differenzielle Kyptoanalyse
+    \item \textbf{Hauptschwachpunkt:} kurzer Schlüssel (nur 56 Bits)
+    \begin{itemize}
+        \item Brute-Force Angriff ist möglich
+        \item DES Cracker: bricht DES in wenigen Tagen (in 1988)
+        
+    \end{itemize}
+    \item \textbf{Erweiterungen:} Mehrfachanwendung von DES zur Verlängerung des Schlüssels (z.B. Triple DES)
+\end{itemize}
+
+\subsubsection{Triple-DES}
+\begin{itemize}
+    \item DES-Algorithmus wird dreimal hintereinander auf einen Datenblock angewendet, um die Sicherheit zu erhöhen
+    \item dabei werden \textbf{drei 56-Bit-Schlüssel} verwendet, was zu einer \hl{nominalen Schlüssellänge} von \textbf{168 Bits} führt
+\end{itemize}
+\textbf{Meet-in-the-Middle Angriff}
+\begin{itemize}
+    \item nutzt den Umstand aus, dass der Angreifer sowohl den Klartext als auch den Chiffretext kennt und durch \textbf{Berechnung von Zwischenergebnissen} den Schlüsselraum effizienter durchsuchen kann
+    \item funktioniert folgendermaßen:
+    \begin{enumerate}
+        \item Ein Angreifer berechnet für alle möglichen Schlüssel $K_0$ das Ergebnis $X = DES(M, K_0)$, wobei $M$ die bekannte Nachricht ist ($2^{56}$ Möglichkeiten)
+        \item danach berechnet er für alle möglichen Schlüssel $K_1$ das Ergebnis $Y= DES^{-1}(X,K_1)$ ($2^{56}$ $\cdot$ $2^{56}$ Möglichkeiten)
+        \item schließlich berechnet er für alle möglichen Schlüssel $K_2$ das Ergebnis $Z = DES^{-1} (C, K_2)$, wobei C der bekannte Chiffretext ist
+        \item Der Angreifer vergleicht nun alle Werte von $Y$ ind $Z$. Wenn eine Übereinstimmung gefunden wird, hat er potenziell den richtigen Schlüssel gefunden
+    \end{enumerate}
+    \item dieser Angriff reduziert den Aufwand für das Knacken von Triple-DES auf etwa $2^{112}$ Operationen anstatt der erwarteten $2^{168}$ Operationen
+\end{itemize}
+
+\subsection{Advanced Encryption Standard (AES)}
+\begin{itemize}
+    \item Schlüsselgröße: \textbf{128, 192} oder \textbf{256} Bit
+    \item Block-Größe: \textbf{128} Bit
+    \item gilt als unangebrochen: in den USA Zulassung für \textbf{höchte Geheimhaltungsstufe}
+\end{itemize}
+\subsubsection{Angriffe in der Praxis}
+\begin{enumerate}
+    \item \textbf{Seiten-Kanal-Angriffe}
+    \begin{itemize}
+        \item \hl{passive Angriffe}, bei denen der Angreifer \textbf{physikalische Informationen} während der Ausführung einer kryptographischen Operation beobachtet
+        \item Messe die \textbf{Zeit}, die für kryptographische Operationen benötigt wird 
+        \item Messe den \textbf{Stromverbrauch}
+    \end{itemize}
+
+    \item \textbf{Fehlerangriffe}
+    \begin{itemize}
+        \item \hl{aktive Angriffe}, bei denen der Angreifer gezielt \textbf{Fehler in den Berechnungsprozess} einführt
+        \item können durch \textbf{physikalische Manipulationen}, wie Laserstrahlen, elektromagnetische Pulse oder Spannungsschwankungen verursacht werden
+        \item Ziel ist es durch die \textbf{Analyse der fehlerhaften Ausgaben} Informationen über den geheimen Schlüssel zu gewinnen
+    \end{itemize}
+\end{enumerate}
+
+\noindent\textbf{Blockchiffren im Einsatz}
+\begin{itemize}
+    \item \hl{nicht IND-CPA sicher}
+    \item Nachrichten belieber Länge können nicht direkt verschlüsselt werden
+    \item Merke: Deterministische Verschlüsselung kann nicht IND-CPA sicher sein
+\end{itemize}
+
+
+\subsection{Modes of Operation}
+\begin{itemize}
+    \item Ziel: Verschlüsselung von Nachrichten mit \hl{beliebiger Länge}
+\end{itemize}
+\begin{enumerate}
+    \item \textbf{Electronic Codebook (ECB)} Modus
+    \begin{itemize}
+        \item nicht IND-CPA sicher
+    \end{itemize}
+
+        \item \textbf{Cipher-Block-Chaining (CBC)} Modus
+        \item \textbf{Counter (CTR)} Modus
+\end{enumerate}
+\subsubsection{Electronic Code Book (ECB) Modus}
+\begin{itemize}
+    \item jeder Klartextblock wird \textbf{unabhänig} voneinander mit \textbf{demselben Schlüssel} verschlüsselt
+    \item bedeutet, dass identische Klartextblöcke immer zu identischen Chiffretextblocken führen $\rightarrow$ erhebliche Schwäche
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ecb.png}
+    \caption{ECB-Modus}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Funktionsweise:}
+\begin{enumerate}
+    \item \hl{Aufteilung des Klartextes in Blöcken}
+    \begin{itemize}
+        \item Klartext $m$ wird in Blöcke der Größe der Blockchiffre unterteilt
+        \item wenn Länge des Klartextes $|m|$ \textbf{kein Vielfaches} der Blockgröße ist, wird der letzte Block durch \hl{Padding} (Auffüllen) ergänzt, um die Blockgröße zu erreichen
+    \end{itemize}
+
+    \item \hl{Verschlüsselung:}
+    \begin{itemize}
+        \item jeder Klartexttblock wird \textbf{unabhängig} voneinander mit dem \textbf{gleichen Schlüssel $k$} verschlüsselt
+        \[
+            c_i = Enc_k (m_i)
+        \]
+    \end{itemize}
+
+    \item \hl{Entschlüsselung:}
+    \begin{itemize}
+        \item jeder Chiffretextblock wird unabhänig voneinander mit dem gleichen Schlüssel entschlüsselt
+        \[
+            m_i = Dec_k(c_i)
+        \]
+        \item die entschlüsselten Blöcke werden zu einem \textbf{Klartextblock kombiniert}
+    \end{itemize}
+\end{enumerate}
+\textbf{Schwächen des ECB-Modus:}
+\begin{itemize}
+    \item da jeder Block unabhängig verschlüsselt wird, gibt es \textbf{keine Zufälligkeit oder Verknüpfung} zwischen den Blöcken
+    \begin{itemize}
+        \item führt dazu, dass ein Angreifer, der einen Teil des Klartextes kennt, leicht \hl{Rückschlüsse} auf den Chiffretext ziehen kann 
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Cipher Block Chaining (CBC) Modus}
+\begin{itemize}
+    \item jeder Klartextblock wird vor der Verschlüsselung mit dem \textbf{vorherigen Klartextblock verknüpft}, was sicherstellt, dass gleiche Klartextblöcke nicht zu gleichen Chiffretextblocken führen
+    \begin{itemize}
+        \item dadurch wird eine Form der \textbf{Randomisierung} eingeführt
+    \end{itemize}
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc1.png}
+    \caption{CBC-Verschlüsselung}
+    \label{fig:enter-label}
+\end{figure}\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc2.png}
+    \caption{CBC-Entschlüsselung}
+    \label{fig:enter-label}
+\end{figure}
+\noindent\textbf{Funktionsweise des CBC-Modus:}
+\begin{enumerate}
+    \item \hl{Initialisierungsvektor (IV):}
+    \begin{itemize}
+        \item beginnt mit einem zufälligen Initialisierungsvektor, der \textbf{genau so lang ist wie ein Block}
+    \end{itemize}
+
+    \item \hl{Verknüpfung der Blöcke:}
+    \begin{itemize}
+        \item jeder Klartextblock wird vor der Verschlüsselung mit dem \textbf{Chiffretext des vorherigen Blocks} XOR verknüpft
+    \end{itemize}
+
+    \item \hl{Entschlüsselung:}
+    \begin{itemize}
+        \item jeder Chiffretext wird entschlüsselt und dann mit dem vorherigen Chiffretextblock XOR verknüpft, um den ursprünglichen Klartext wiederherzustellen
+    \end{itemize}
+\end{enumerate}
+
+\noindent\textbf{CBC-Modus: Sicherheit}
+\begin{itemize}
+    \item ist \hl{IND-CPA sicher}, wenn er korrekt verwendet wird
+\end{itemize}
+
+\noindent\textbf{Padding Angriffe auf CBC}
+\begin{itemize}
+    \item Chosen-Ciphertext Angriffe können Informationen über Bits der Nachricht liefern
+    \item Bitänderungen in Chiffretext Block 1 führen zu Änderungen in Klartext Block 2
+    \item wenn angteifer lernt ob bei der Entschlüsselung das Padding ungültig war, können \textbf{gezielte Modifikationen} in Block 1 \textbf{Informationen} über Klartext in Block 2 liefern
+\end{itemize}
+\hl{Angriffsszenario:}
+\begin{itemize}
+    \item Angreifer hat Zugriff auf verschlüsselten Chiffretext, der im CBC-Modus erstellt wurde
+    \item \textbf{kennt den Schlüssel nicht}, hat jedoch die Möglichkeit, den Chiffretext zu \textbf{modifizieren} und an ein \textbf{System zu senden}, das die Entschlüsselung durchführt
+    \item System gibt Rückmeldungen darüber, ob das \textbf{Padding nach der Entschlüsselung korrekt} war (z.B. durch Fehlermeldungen)
+\end{itemize}
+\textbf{Sicherheit gegen Padding-Angriffe vs. IND-CPA/IND-CCA}
+\begin{itemize}
+    \item Sicherheit gegen Padding Angriffe ist \textbf{stärker} als IND-CPA Sicherheit 
+    \begin{itemize}
+        \item Bsp: CBC-Mode ist IND-CPA sicher, aber nicht gegem Padding Angriffe
+    \end{itemize}
+
+    \item im IND-CCA Spiel hat Angreifer Zugriff auf \hl{Entschlüsselungsorakel}
+    \begin{itemize}
+        \item kann alles, was Padding Orakel auch kann (aber noch mehr)
+        \item ist mächtiger als ein Padding Orakel!
+        \item IND-CCA bietet \textbf{stärkere Sicherheit}
+    \end{itemize}
+\end{itemize}
+$\rightarrow$ Sicherheit gegen Padding Angriffe liegt \textbf{zwischen IND-CPA und IND-CCA Sicherheit}
+\subsubsection{Counter Modus (CTR)}
+\begin{itemize}
+    \item Idee: Nutze Ausgabe der Blockchiffre als One-Time-Pad
+    \item anstatt wie beim One-Time-Pad einen großen zufälligen Schlüssel zu verwenden, wird beim CTR-Modus ein \hl{Zählerwert(Counter)} verwendet
+    \item dieser Zähler wird bei jeder Verschlüsselung \textbf{inkrementiert} und zusammen mit einem festen Wert verschlüsselt
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ctr.png}
+    \caption{Counter Modus}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Fehlerresistenz}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Fehlerresistenz.png}
+    \caption{Fehlerresistenz}
+    \label{fig:enter-label}
+\end{figure}\\[2mm]
+\textbf{Vergleich der Modi}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/vergl.png}
+    \caption{Vergleich der unterschiedlichen Modi}
+    \label{fig:enter-label}
+\end{figure}
 \end{document}
 
 
