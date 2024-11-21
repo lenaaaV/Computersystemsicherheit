@@ -903,6 +903,144 @@ $\rightarrow$ Sicherheit gegen Padding Angriffe liegt \textbf{zwischen IND-CPA u
     \caption{Vergleich der unterschiedlichen Modi}
     \label{fig:enter-label}
 \end{figure}
+\subsection{Kryptographische Hashfunktionen}
+\subsubsection{Hashfunktionen}
+\begin{itemize}
+    \item Eingabe von Nachrichten mit \textbf{beliebiger Länge}
+    \item Ausgabe mit \textbf{fixer Länge} ("message digest")
+    \item Determinismus: selbe Eingabe erzeugt immer denselben Hashwert
+\end{itemize}
+
+$H: \{ 0,1\}^* \rightarrow \{ 0,1\}^n$ bildet von großer Definitionsmenge auf kleineren Bildbereich ab
+\subsubsection{Sicherheitsdefinitionen}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sicherheitsdef.png}
+    \caption{Sicherheitsdefinitionen}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent\textbf{Warum diese Sicherheitsdefinitionen?}\\[1.5mm]
+\hl{Preimage Resistance (Urbildresistenz):}
+\begin{itemize}
+    \item diese Eigenschaft stellt sicher, dass es \textbf{extrem schwierig} ist , die ursprüngliche Nachricht (oder Eingabe) aus einem gegebenen Hashwert zu \textbf{rekonstruieren}
+    \item \textbf{Nutzen:} schützt vor Rekonstruktion aus Hash-Wert, z.B. um Vertraulichkeit von Passwörtern zu sichern
+\end{itemize}
+\hl{Second Preimage Resistance (Zweite Urbildresistenz):}
+\begin{itemize}
+    \item diese Eigenschaft schützt davor, dass ein Angreifer, der eine Nachricht $m$ kennt, eine andere Nachricht $m'$ findet, die denselben Hash-Wert hat wie $m$
+    \item \textbf{Nutzen:} Verhindert Finnden verschiedener Daten mit gleichem Hash-Wert, z.B. schwierig zwei gültige Zertifikate zu erzeugen
+\end{itemize}
+
+\noindent\hl{Collision Resistance (Kollisionsresistenz):}
+\begin{itemize}
+    \item diese Eigenschaft stellt sicher, dass es extrem schwierig ist, zwei beliebige unterschiedliche Nachrichten $m$ und $m'$ zu finden, die denselben Hash-Wert haben
+    \item \textbf{Nutzen:} Kollisionen sind ausgeschlossen und damit für beliebige Anwendungen anwendbar
+\end{itemize}
+
+\subsection{Message Authentication Codes}
+\begin{itemize}
+    \item  kryptografisches Verfahren, das sicherstellt, dass eine Nachricht während der Übertragung \textbf{nicht manipuliert wurde und tatsächlich vom angegebenen Absender} stammt
+    \item dient dazu, die \hl{Integrität und Authentizität} einer Nachricht zu garantieren, was für sichere Kommunikation essenziell ist
+\end{itemize}
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/mac.png}
+    \caption{Message Authentication}
+    \label{fig:enter-label}
+\end{figure}
+\begin{itemize}
+    \item Im Allgemeinen garantiert Verschlüsselung allein \textbf{nicht die Integrität} einer Nachricht
+    \item schützt lediglich die Vertraulichkeit der Daten, jedoch nicht deren Unverfälschheit
+\end{itemize}
+\textbf{Was wird benötigt?}
+\begin{itemize}
+    \item \hl{Gen (Key-Generation)}
+    \begin{itemize}
+        \item generiert einen geheimen Schlüssel $k$ basierend auf einem Sicherheitsparameter
+    \end{itemize}
+
+    \item \hl{Mac (Tag-Generierung)}
+    \begin{itemize}
+        \item berechnet einen Authentifizierungstag $t$ basierend auf der Nachricht $m$ und dem Schlüssel $k$
+    \end{itemize}
+
+    \item \hl{Vrfy (Verifikation)}
+    \begin{itemize}
+        \item überprüft die Gültigkeit eines Tags $t$ für die Nachricht $m$ und den Schlüssel $k$
+    \end{itemize}
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/macs.png}
+    \caption{Message Authentication Code}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Korrektheit:}
+Die Verifizierung eines gültigen Tags $t$ für eine Nachricht $m$ und dem Schlüssel $k$ muss korrekt sein. Das bedeutet:
+\begin{equation}
+    Vrfy_k(m, Mac_k(m)) = 1
+\end{equation}
+\textbf{Effizienz:}
+Authentifizierung und Verifizierung sind effizient ($>$10 GB/s)
+\subsubsection{Sicherheitsdefinition}
+\begin{itemize}
+    \item Ziel des Angreifers: Was ist ein erfolgreicher Angriff?
+    \begin{itemize}
+        \item naive Option: Angreifer lernt den Schlüssel k nicht
+        \item in der Kyptographie: Angreider kann \textbf{keinen validen Tag} $t$ für $m$ erzeugen
+    \end{itemize}
+\end{itemize}
+\textbf{Arten von MACs}
+\begin{enumerate}
+    \item \hl{Informationstheoretisch sichere MACs} $\longrightarrow$ \textbf{nicht effizient} für Authentifizierung von vielen Nachrichten
+    \item \hl{Komplextheoretisch sichere MACS}
+    \begin{itemize}
+        \item für Nachrichten \textbf{fixer} Länge
+        \item für Nachrichten mit \textbf{beliebiger} Länge, z.B. \textbf{CBC-MAC} und \textbf{HMAC}
+    \end{itemize}
+\end{enumerate}
+\subsubsection{CBC-MAC}
+\begin{itemize}
+    \item ist ein Verfahren zur Berechnung eines \textbf{Message Authentication Codes (MAC)} auf Basis einer Blockchiffre
+    \item veerwendet den \textbf{CBC-Modus}, um eine Nachricht zu authentifizieren
+    \item der resultierende Tag (MAC-Wert) wird aus dem letzten Block des \textbf{CBC-Verschlüsselungsprozesses abgeleitet}
+\end{itemize}
+\textbf{Funktionsweise von CBC-MAC:}
+\begin{enumerate}
+    \item Sei $F_k: \{0,1\} \text{x} \{0,1\}^n \longrightarrow \{0,1\}^n$ eine Blockchiffre mit Schlüssel $k$, die Blöcke der Länge $n$ verarbeitet 
+    \item die Nachricht $m$ wird in \textbf{gleich große Blöcke} aufgeteilt: $m = (m_1, m_2,\dots,m_t)$, wobei jeder Block $m_i \in \{0,1\}^n$ ist
+    \item der \textbf{Initialisierungsvektor} (IV) wird aud $0^n$ gesetzt (eine Nullfolge der Länge n)
+    \item die Blöcke der Nachricht werden \textbf{iterativ} mit der Blockchiffre im CBC-Modus verarbeitet
+    \begin{itemize}
+        \item der letzte Block wird als Tag ausgegeben
+    \end{itemize}
+    \item Prüfen ob Tag gültig ist: $ Vrfy_k (m,t): \tilde{t}  = \text{CBC} - MAC_k (m)$
+    \begin{itemize}
+        \item gib 1 aus, dalls $t = \tilde{t}$, ansonsten 0
+    \end{itemize}
+\end{enumerate}
+\textbf{Wichtig:} CBC-MAC ist nur \textbf{sicher für Nachrichten mit fester Länge}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc-mac.png}
+    \caption{CBC-MAC}
+    \label{fig:enter-label}
+\end{figure}\\
+\textbf{CBC-MAC mit Nachrichten unterschiedlicher Länge}
+\begin{itemize}
+    \item Nachrichten $m$ mit $CBC-MAC_k(m) = t$ und $m'$ mit $CBC-MAC_k(m) = t$
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbcmac.png}
+    \caption{CBC-MAC - unterschiedliche Länge}
+    \label{fig:enter-label}
+\end{figure}
 \end{document}
+
+
+
 
 

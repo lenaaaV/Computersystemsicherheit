@@ -1,51 +1,57 @@
 \babel@toc {german}{}\relax 
-\contentsline {section}{\numberline {1}Thema 1: Einführung}{2}{}%
-\contentsline {subsection}{\numberline {1.1}Themenübersicht}{2}{}%
-\contentsline {subsection}{\numberline {1.2}Begriffsbedeutung}{2}{}%
-\contentsline {subsubsection}{\numberline {1.2.1}Was bedeutet Sicherheit?}{2}{}%
-\contentsline {subsubsection}{\numberline {1.2.2}Sicherheitseigenschaften}{2}{}%
-\contentsline {subsubsection}{\numberline {1.2.3}Wie können wir uns schützen? Allgemeine Sicherheitsprinzipien}{3}{}%
-\contentsline {section}{\numberline {2}Thema 2: Einführung Kryptographie}{5}{}%
-\contentsline {subsection}{\numberline {2.1}Themenübersicht}{5}{}%
-\contentsline {subsection}{\numberline {2.2}Was ist Kryptographie?}{5}{}%
-\contentsline {subsection}{\numberline {2.3}Klassische vs. moderne Kryptographie}{5}{}%
-\contentsline {subsubsection}{\numberline {2.3.1}Klassische Kryptographie}{5}{}%
-\contentsline {subsubsection}{\numberline {2.3.2}Moderne Kryptographie}{5}{}%
-\contentsline {subsection}{\numberline {2.4}Ziele der Kryptographie}{5}{}%
-\contentsline {subsection}{\numberline {2.5}Schlüssel}{6}{}%
-\contentsline {subsection}{\numberline {2.6}Kerkhoff'sches Prinzip}{6}{}%
-\contentsline {subsection}{\numberline {2.7}Klassische Chiffren}{6}{}%
-\contentsline {subsection}{\numberline {2.8}Moderne Kryptographie}{6}{}%
-\contentsline {subsubsection}{\numberline {2.8.1}Anwendung Heute}{6}{}%
-\contentsline {subsubsection}{\numberline {2.8.2}Ansatz der modernen Kryptographie}{7}{}%
-\contentsline {subsubsection}{\numberline {2.8.3}Was sind kryptographische Annahmen?}{7}{}%
-\contentsline {subsubsection}{\numberline {2.8.4}Kryptographische Primitive und Konstruktionen}{7}{}%
-\contentsline {section}{\numberline {3}Thema 3: Symmetrische Kryptographie}{7}{}%
-\contentsline {subsection}{\numberline {3.1}Themenübersicht}{7}{}%
-\contentsline {subsection}{\numberline {3.2}Definition Symmetrischer Chiffren}{8}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Schutzziel}{8}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Funktionale Definition}{8}{}%
-\contentsline {subsubsection}{\numberline {3.2.3}Sicherheitsdefinition}{8}{}%
-\contentsline {subsubsection}{\numberline {3.2.4}Sicherheitsspiel (IND-CPA)}{9}{}%
-\contentsline {subsubsection}{\numberline {3.2.5}Bietet IND-CPA die stärkste Sicherheit?}{9}{}%
-\contentsline {subsubsection}{\numberline {3.2.6}Stärkere Sicherheit: IND-CCA}{9}{}%
-\contentsline {subsubsection}{\numberline {3.2.7}Unterschied zwischen IND-CPA und IND-CCA}{10}{}%
-\contentsline {subsection}{\numberline {3.3}One-Time-Pad Verschlüsselung}{10}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}One-Time-Pad}{10}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Sicherheit}{11}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}Schlüssel nur einmal verwenden}{11}{}%
-\contentsline {subsubsection}{\numberline {3.3.4}Venona-Projekt: Risiken von One-Time-Pads}{11}{}%
-\contentsline {subsubsection}{\numberline {3.3.5}Nachteile von One-Time-Pad}{12}{}%
-\contentsline {section}{\numberline {4}Übung 1}{12}{}%
-\contentsline {subsection}{\numberline {4.1}Aufgabe 1: Wissensfragen}{12}{}%
-\contentsline {subsection}{\numberline {4.2}Aufgabe 2: IND-CPA vs. IND-CCA}{13}{}%
-\contentsline {section}{\numberline {5}Thema 3: Symmetrische Kryptographie - Teil }{13}{}%
-\contentsline {subsection}{\numberline {5.1}Data Encryption Standard (DES)}{13}{}%
-\contentsline {subsubsection}{\numberline {5.1.1}DES: Angriffe}{14}{}%
-\contentsline {subsubsection}{\numberline {5.1.2}Triple-DES}{14}{}%
-\contentsline {subsection}{\numberline {5.2}Advanced Encryption Standard (AES)}{14}{}%
-\contentsline {subsubsection}{\numberline {5.2.1}Angriffe in der Praxis}{15}{}%
-\contentsline {subsection}{\numberline {5.3}Modes of Operation}{15}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}Electronic Code Book (ECB) Modus}{15}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Cipher Block Chaining (CBC) Modus}{16}{}%
-\contentsline {subsubsection}{\numberline {5.3.3}Counter Modus (CTR)}{18}{}%
+\contentsline {section}{\numberline {1}Thema 1: Einführung}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Themenübersicht}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Begriffsbedeutung}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Was bedeutet Sicherheit?}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}Sicherheitseigenschaften}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}Wie können wir uns schützen? Allgemeine Sicherheitsprinzipien}{4}{}%
+\contentsline {section}{\numberline {2}Thema 2: Einführung Kryptographie}{6}{}%
+\contentsline {subsection}{\numberline {2.1}Themenübersicht}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Was ist Kryptographie?}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Klassische vs. moderne Kryptographie}{6}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}Klassische Kryptographie}{6}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Moderne Kryptographie}{6}{}%
+\contentsline {subsection}{\numberline {2.4}Ziele der Kryptographie}{6}{}%
+\contentsline {subsection}{\numberline {2.5}Schlüssel}{7}{}%
+\contentsline {subsection}{\numberline {2.6}Kerkhoff'sches Prinzip}{7}{}%
+\contentsline {subsection}{\numberline {2.7}Klassische Chiffren}{7}{}%
+\contentsline {subsection}{\numberline {2.8}Moderne Kryptographie}{7}{}%
+\contentsline {subsubsection}{\numberline {2.8.1}Anwendung Heute}{7}{}%
+\contentsline {subsubsection}{\numberline {2.8.2}Ansatz der modernen Kryptographie}{8}{}%
+\contentsline {subsubsection}{\numberline {2.8.3}Was sind kryptographische Annahmen?}{8}{}%
+\contentsline {subsubsection}{\numberline {2.8.4}Kryptographische Primitive und Konstruktionen}{8}{}%
+\contentsline {section}{\numberline {3}Thema 3: Symmetrische Kryptographie}{8}{}%
+\contentsline {subsection}{\numberline {3.1}Themenübersicht}{8}{}%
+\contentsline {subsection}{\numberline {3.2}Definition Symmetrischer Chiffren}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Schutzziel}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Funktionale Definition}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Sicherheitsdefinition}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}Sicherheitsspiel (IND-CPA)}{10}{}%
+\contentsline {subsubsection}{\numberline {3.2.5}Bietet IND-CPA die stärkste Sicherheit?}{10}{}%
+\contentsline {subsubsection}{\numberline {3.2.6}Stärkere Sicherheit: IND-CCA}{10}{}%
+\contentsline {subsubsection}{\numberline {3.2.7}Unterschied zwischen IND-CPA und IND-CCA}{11}{}%
+\contentsline {subsection}{\numberline {3.3}One-Time-Pad Verschlüsselung}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}One-Time-Pad}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Sicherheit}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Schlüssel nur einmal verwenden}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}Venona-Projekt: Risiken von One-Time-Pads}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.5}Nachteile von One-Time-Pad}{13}{}%
+\contentsline {section}{\numberline {4}Übung 1}{13}{}%
+\contentsline {subsection}{\numberline {4.1}Aufgabe 1: Wissensfragen}{13}{}%
+\contentsline {subsection}{\numberline {4.2}Aufgabe 2: IND-CPA vs. IND-CCA}{14}{}%
+\contentsline {section}{\numberline {5}Thema 3: Symmetrische Kryptographie - Teil }{14}{}%
+\contentsline {subsection}{\numberline {5.1}Data Encryption Standard (DES)}{14}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}DES: Angriffe}{15}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Triple-DES}{15}{}%
+\contentsline {subsection}{\numberline {5.2}Advanced Encryption Standard (AES)}{15}{}%
+\contentsline {subsubsection}{\numberline {5.2.1}Angriffe in der Praxis}{16}{}%
+\contentsline {subsection}{\numberline {5.3}Modes of Operation}{16}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Electronic Code Book (ECB) Modus}{16}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Cipher Block Chaining (CBC) Modus}{17}{}%
+\contentsline {subsubsection}{\numberline {5.3.3}Counter Modus (CTR)}{19}{}%
+\contentsline {subsection}{\numberline {5.4}Kryptographische Hashfunktionen}{20}{}%
+\contentsline {subsubsection}{\numberline {5.4.1}Hashfunktionen}{20}{}%
+\contentsline {subsubsection}{\numberline {5.4.2}Sicherheitsdefinitionen}{20}{}%
+\contentsline {subsection}{\numberline {5.5}Message Authentication Codes}{20}{}%
+\contentsline {subsubsection}{\numberline {5.5.1}Sicherheitsdefinition}{21}{}%
+\contentsline {subsubsection}{\numberline {5.5.2}CBC-MAC}{22}{}%
