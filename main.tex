@@ -1038,6 +1038,68 @@ Authentifizierung und Verifizierung sind effizient ($>$10 GB/s)
     \caption{CBC-MAC - unterschiedliche Länge}
     \label{fig:enter-label}
 \end{figure}
+
+\subsubsection{Hash-und-MAC}
+\hl{Konstruktionsidee:}
+\begin{enumerate}
+    \item Berechne $y = H(m)$ der langen Nachricht $m$ mit Hilfe von Domain-Extension für Hashfunktionen
+    \item Berechne $MAC_k(y)$ mit MAC für fixe Nachrichtenlänge
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png}
+    \caption{Hash-und-MAC}
+    \label{fig:enter-label}
+\end{figure}
+\subsubsection{HMAC (Hash-based Message Authentication Code)}
+\begin{itemize}
+    \item sichere und flexible Konstruktion, die auf einer \textbf{Hashfunktion} basiert und zur \textbf{Authentifizierung von Nachrichten} verwendet wird
+    \item \hl{Trivialer Ansatz:} $MAC_k (y) = H(k||y)$
+    \item sicher für \textbf{manche Hash-Funktionen}, wie SHA-3, da diese nicht anfällig für bestimmte Angriffe sind
+    \item unsicher für andere Hash-Funktionen, wie SHA-256
+    \begin{itemize}
+        \item arbeitet mit \textbf{fixen Eingabelängen} und \textbf{iterativem Hashing}
+        \item trivialer Ansatz ist anfällig für \textbf{length extension attacks}
+    \end{itemize}
+\end{itemize}
+\textbf{Bessere Lösung: HMAC (RFC 2014)}
+\begin{itemize}
+    \item umgeht Probleme des trivialen Ansatzes durch eine robustere Konstruktion
+    \item nutzt \hl{zwei Padding-Werte} (inner padding und outer padding)
+\end{itemize}
+\subsection{Authentifizierte Verschlüsselung}
+\begin{itemize}
+    \item kombiniert \textbf{Vertraulichkeit, Integrität} und \textbf{Authentizität} von Nachrichten
+    \item stellt sicher, dass ein Angreifer weder Klartext einer Nachricht lesen, noch diese manipulieren kann
+\end{itemize}
+\subsubsection{Encrypt-then-MAC}
+\begin{itemize}
+    \item Nachricht wird zunächst \textbf{verschlüsselt} und anschließend der Chiffretext mit \textbf{MAC authentifiziert}
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png}
+    \caption{Encrypt-then-MAC}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Encrypt-then-MAC oder MAC-then-Encrypt}
+\hl{Encrypt-then-MAC}
+\begin{itemize}
+    \item nur \textbf{authentische Chiffretexte} werden entschlüsselt
+    \item beweisbar sicher 
+    \item durch Authentifizierung auch \hl{IND-CCA sicher}
+\end{itemize}
+
+\noindent\hl{MAC-then-Encrypt}
+\begin{itemize}
+    \item die Nachricht wird \textbf{zuerst verschlüsselt}, und anschließend wird ein MAC über den Chiffretext berechnet 
+    \item der Empfänger überprüft den MAC \textbf{vor der Entschlüsselung}
+    \item wenn der MAC \textbf{ungültig} ist, wird die \textbf{Nachricht verworfen}, ohne dass eine Entschlüsselung stattfindet
+    \item sicher gegen Padding Oracle-Angriffe, wie \hl{BEAST} und \hl{Lucky 13}
+    \item nutzen Tatsache aus, dass auch dann entschlüsselt wird, falls Chiffretext verändert wurde
+\end{itemize}
 \end{document}
 
 
