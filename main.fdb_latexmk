@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1732221256.84004 "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" "main.pdf" "main" 1732221260.55609 0
-  "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" 1732221256.62224 49794 c4565c63e7006ec0c93cb1ed06f0bb35 ""
+["pdflatex"] 1732275262.94834 "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" "main.pdf" "main" 1732275266.82078 0
+  "/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/main.tex" 1732275262.69661 52749 f44aa3ea1d9e9ad80aeedc90759790d0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -133,6 +133,8 @@
   "img/ctr.png" 1732026557.86854 321389 5a5fb0836784eafbbe232ee6c837902f ""
   "img/ecb.png" 1732020608.03556 312007 16635d1a2948e153593f49ce48365a37 ""
   "img/enc.png" 1730737326.84895 96123 251cbda88771557a82f716fa4783f4d6 ""
+  "img/encrthenmac.png" 1732273302.82702 170587 48cbaa9b8bfb6a6a2ab41aa04a11a434 ""
+  "img/hashundmac.png" 1732260747.1189 45366 6f7d9c2e181a587c0051d2fa9563d5ad ""
   "img/ind-cca.png" 1731320894.54931 519688 1bd144e5d31ecb9583cd9081bbb03286 ""
   "img/mac.png" 1732196699.70976 165765 e992019d451166f5dfd8505e4a8a21de ""
   "img/macs.png" 1732200682.49792 76631 207306dd2f6a16d2db7b0306d2a9987e ""
@@ -142,9 +144,9 @@
   "img/sicherheitsdef.png" 1732098726.39296 765559 498cfbb02a3d9cc806881da1ac64ab84 ""
   "img/vergl.png" 1732027223.8447 181078 a8437079b2666a451621f069b702673b ""
   "img/xor.png" 1731322384.64018 172138 37049bb4b45e55400c83fa6d60c13843 ""
-  "main.aux" 1732221260.48142 10328 6c90eecd2301bd67a8e8d04e8297ae3a "pdflatex"
-  "main.tex" 1732221256.62224 49794 c4565c63e7006ec0c93cb1ed06f0bb35 ""
-  "main.toc" 1732221260.48293 4501 4ea505ae5cf15ffb4d831a42cdae0c53 "pdflatex"
+  "main.aux" 1732275266.74587 11314 ceba2b02dada1d36c69093ebad4c8131 "pdflatex"
+  "main.tex" 1732275262.69661 52749 f44aa3ea1d9e9ad80aeedc90759790d0 ""
+  "main.toc" 1732275266.74737 4930 7bd9015833eabf1b46c5b26518a30185 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
