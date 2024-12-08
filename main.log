@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.22)  22 NOV 2024 12:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.22)  8 DEC 2024 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,6 +458,18 @@ LaTeX Warning: Label `fig:enter-label' multiply defined.
 
 LaTeX Warning: Label `fig:enter-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -657,7 +669,30 @@ File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png>
 Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png  used on input line 1082.
 (pdftex.def)             Requested size: 241.84843pt x 101.21176pt.
- [23 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png>] [24] (./main.aux)
+ [23 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png>]
+</Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png, id=132, 1166.3575pt x 250.9375pt>
+File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png Graphic file (type png)
+<use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png>
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png  used on input line 1109.
+(pdftex.def)             Requested size: 338.58632pt x 72.84276pt.
+ [24 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png>]
+</Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png, id=138, 1248.665pt x 337.26pt>
+File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png Graphic file (type png)
+<use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png>
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png  used on input line 1134.
+(pdftex.def)             Requested size: 290.22107pt x 78.3864pt.
+</Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png, id=139, 1393.205pt x 484.81125pt>
+File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png Graphic file (type png)
+<use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png>
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png  used on input line 1168.
+(pdftex.def)             Requested size: 338.58632pt x 117.8218pt.
+ [25 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png>]
+</Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png, id=145, 1409.265pt x 323.2075pt>
+File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png Graphic file (type png)
+<use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png>
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png  used on input line 1183.
+(pdftex.def)             Requested size: 338.58632pt x 77.65028pt.
+ [26 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -668,18 +703,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15687 strings out of 474116
- 322000 string characters out of 5743682
+ 15715 strings out of 474116
+ 324306 string characters out of 5743682
  1949187 words of memory out of 5000000
- 37795 multiletter control sequences out of 15000+600000
+ 37823 multiletter control sequences out of 15000+600000
  561037 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,12n,93p,854b,493s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (25 pages, 3285562 bytes).
+Output written on main.pdf (27 pages, 4048924 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 194 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

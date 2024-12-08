@@ -1100,6 +1100,100 @@ Authentifizierung und Verifizierung sind effizient ($>$10 GB/s)
     \item sicher gegen Padding Oracle-Angriffe, wie \hl{BEAST} und \hl{Lucky 13}
     \item nutzen Tatsache aus, dass auch dann entschlüsselt wird, falls Chiffretext verändert wurde
 \end{itemize}
+
+\section{Thema 4: Asymmetrische Kryptographie}
+\begin{itemize}
+    \item basiert auf der Verwendung eines \textbf{Schlüsselpaares}: einem öffentlichen Schlüssel und einem privaten Schlüssel
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png}
+        \caption{asymmetrische Verschlüsselung}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \item Bob erstellt Schlüsselpaar und \textbf{veröffentlicht} den öffentlichen Schlüssel \textbf{pk}
+\end{itemize}
+
+\textbf{Anzahl an Schlüssel }
+\begin{itemize}
+    \item \hl{Symmetrische Krpytographie}: Schlüssel zwischen jedem Paar aus Parteien
+    \[
+        \text{bei n-Parteien:} \quad \frac{n \cdot (n-1)}{2} \, \text{Schlüssel}
+    \]
+
+    \item \hl{Asymmetrische Kryptographie:} ein öffentlicher Schlüssel pro Partei
+    \[
+        \text{bei n Parteien:} \, \, n \,  \text{Schlüsselpaare}
+    \]
+\end{itemize}
+\newpage
+\subsection{Definition asymmetrischer Chiffren}
+\subsubsection{Funktionale Definition}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png}
+    \caption{funktionale Definition}
+    \label{fig:enter-label}
+\end{figure}
+\begin{itemize}
+    \item \hl{Gen:} generiert Schlüsselpaar $(pk,sk)$, wobei $pk$ der öffentliche Schlüssel und $sk$ der geheime Schlüssel ist
+    \item \hl{Enc:} verschlüsselt die Nachricht $m$ mit dme öffentlichen Schlüssel $pk$, um den Chiffretext $c$ zu erzeigen
+    \item \hl{Dec:} entschlüsselt den Chiffretext $c$ mit dem geheimen Schlüssel $sk$, um die ursprüngliche Nachricht $m$ wiederherzustellen
+\end{itemize}
+\textbf{Korrektheit}
+\begin{itemize}
+    \item die Entschlüsselung eines gültigen Chiffretextes resultiert in die \textbf{original verschlüsselte Nachricht}
+\end{itemize}
+\[
+    Dec(sk, Enc(pk,m)) = m \quad \text{für alle Nachrichten m und alle Schlüsselpaare} \quad (pk,sk) \leftarrow Gen
+\] 
+\subsubsection{Sicherheitsdefinition}
+\begin{itemize}
+    \item Ziel: Angreifer lernt nichts neues über Nachricht m
+\end{itemize}
+\textbf{Angreifermodelle:}
+\begin{itemize}
+    \item öffentlicher Schlüssel ist auch für Angreifer \hl{sichtbar}
+    \begin{itemize}
+        \item Angreifer kann damit beliebige Klartexte verschlüsseln
+        \item entspricht einem sog. \hl{Chosen-Plaintext-Angriff (CPA)}
+    \end{itemize}
+
+    \item ein \textbf{stärkeres Modell} erlaubt es dem Angreider \hl{Chiffretexte auszuwählen} und deren Klartexte zu erhelten (z.B. durch Zugriff auf eine Smartcard)
+    \item wird als \hl{Chose-Ciphertext-Angriff (CCA)} bezeichnet 
+\end{itemize}
+\subsubsection{IND-CPA für PKE}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png}
+    \caption{IND-CPA PKE}
+    \label{fig:enter-label}
+\end{figure}
+\begin{itemize}
+    \item ein Schlüsselpaar $(pk,sk)$ wird durch den Algorithmus Gen erzeugt
+    \item der Angreifer wählt zwei Nachrichten $m_0$ und $m_1$, die gleich lang sind $(|m_0| = |m_1|)$
+    \item der Herausforderer wählt zufällig ein Bit $b \in \{0,1\}$ und verschlüssselt die Nchricht $m_b$ mit dem öffentlichen Schlpssel $pk$, um den Chiffretext $c* = Enc(pk, m_b)$ zu erzeugen
+    \item der Abgreifer erhält den Chiffretext $c*$ und versucht zu raten, welches Bit $b$ verwendet wurde; er gibt seine Vermutung $b'$ aus
+    \item Angreifer gewinnt das Spiel, wenn $b' = b$
+\end{itemize}
+
+\subsubsection{Stärkere Sicherheit: IND-CCA für PKE}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png}
+    \caption{IND-CCA PKE}
+    \label{fig:enter-label}
+\end{figure}
+\begin{itemize}
+    \item Herausforderer generiert ein Schlüsselpaar $(pk,sk)$ mit dem Algorithmus Gen
+    \item Angrifer erhält $pk$ und kann beliebige Chiffretexte $c$ an das \textbf{Entschlüsselungsorakel} senden, um die zugehörigen Klartexte $m = Dec(sk,c)$ erhalten
+    \item Angreifer wählt zwei Nachrichten $m_0$ und $m_1$, die gleich lang sind $(|m_0| = |m_1|)$
+    \item der Herausforderer wählt zufällig ein Bit $b \in \{0,1\}$ und verschlüsselt die Nachricht $m_b$ mit $pk$, um den Textchiffretext $c* = Enc(pk, m_b)$ zu erzeigen
+    \item der Angrifer erhält $c*$
+    \item der Angreifer kann weitere beliebige Chiffretexte entschlüsseln lassen, außer $c*$
+    \item Anreifer gibt ein Bit $b'$ aus und versucht zu erraten, ob c* die Nachricht $m_0$ oder $m_1$ verschlüsselt
+    \item Angreifer gewinnt wenn $b' = b$
+\end{itemize}
 \end{document}
 
 
