@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{lipsum}
+\usepackage{amssymb}
 \usepackage{tcolorbox}
 \usepackage{amsmath} % Für mathematische Formeln (optional)
 \usepackage{xcolor}  % Für Farbdefinitionen
@@ -1193,6 +1194,155 @@ Authentifizierung und Verifizierung sind effizient ($>$10 GB/s)
     \item der Angreifer kann weitere beliebige Chiffretexte entschlüsseln lassen, außer $c*$
     \item Anreifer gibt ein Bit $b'$ aus und versucht zu erraten, ob c* die Nachricht $m_0$ oder $m_1$ verschlüsselt
     \item Angreifer gewinnt wenn $b' = b$
+\end{itemize}
+\subsection{RSA - Ron Riverest, Adi Shamir, Len Adleman}
+\textbf{RSA Schlüsselerzeugung}
+\begin{itemize}
+    \item Schlüsselerzeugung \hl{GenRSA(n)}
+    \begin{itemize}
+        \item der \textbf{Sicherheitsparameter n} bestimmt die Bitlänge der Primzahlen p und q, die zur Erzeugung der Schlüssel verwendet werden (Größere Werte von n erhöhen die Sicherheit)
+    \end{itemize}
+\end{itemize}
+\textbf{Verfahren der Schlüsselerzeugung:}
+\begin{enumerate}
+    \item Wähle zwei \hl{n-bit Primzahlen} $p,q$, mit $p \neq q$
+    \item Berechne $N = p \cdot q$
+    \begin{itemize}
+        \item N wird als Teil des \textbf{öffentlichen Schlüssels} veröffentlicht und dient als Modulus für die Verschlüsselungs- und Entschlüsselungsoperationen
+    \end{itemize}
+    \item die eulersche Phi-Funktion zählt die positiven ganzen Zahlen kleiner als $N$, die \textbf{teilerfremd} zu $N$ sind
+    \[
+        \phi (N) = (p-1)(q-1) = \quad \text{Anzahl Elemente in} \quad \mathbb{Z}_{N}^*
+    \]
+
+    \item wähle $\epsilon > 1$, sodass $ggT(e, \phi (N)) = 1$
+    \item berechne $d = e^{-1} \mod \phi(N)$ bzw. $(e \cdot d) \mod \phi (N) = 1$
+\end{enumerate}
+$\Longrightarrow$ $(N,e)$ ist öffentlicher Schlüssel \\
+$\Longrightarrow$ $(N,d)$ ist geheimer Schlüssel
+
+\subsubsection{Die RSA Funktion}
+Berechne $(N, e, d) = GenRSA(n)$
+\begin{itemize}
+    \item \hl{Verschlüsselung}
+    \begin{itemize}
+        \item Nachricht $x$ wird mir dem öffentlichen Schlüssel (N,e) verschlüsselt
+        \[
+            y = x^e \mod N
+        \]
+    \end{itemize}
+
+    \item \hl{Entschlüsselung (Invertierung der RSA Funktion)}
+    \begin{itemize}
+        \item der Chiffretext $y$ wird mit dem privaten Schlüssel (N,d) entschlüsselte
+        \[
+            x = y^d \mod N
+        \]  
+    \end{itemize}
+\end{itemize}
+
+\noindent\textbf{RSA Annahme}\\
+Um die Invertierung der RSA Funktion zu berechnen, benötigen wir $d$
+\begin{itemize}
+    \item Seien $(N, e, d) = GenRSA(n)$
+    \item Wähle $y$ zufällig in $\mathbb{Z}_N^*$
+    \item Gegeben $(N, e, y)$ ist es \textbf{schwierig} $x$ zu berechnen, so dass: $y \equiv x^e \mod N$
+\end{itemize}
+
+\noindent Ein möglicher Angriff auf die RSA Annahme:
+\begin{enumerate}
+    \item Faktorisiere $N = p \cdot q$, um $p$ und $q$ zu erhalten
+    \item Berechne $\phi (N) = (p-1) \cdot (q-1)$
+    \item Berechne $d = e^{-1} \mod \phi(N)$
+\end{enumerate}
+$\Longrightarrow$ Schwierigkeit der \hl{Faktorisierung} ist notwendige \hl{Annahme} für Sicherheit des RSA Verfahrens\\[2mm]
+
+\noindent\textbf{Textbuch RSA-Verschlüsselung}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/txtbuch.png}
+    \caption{Textbuch RSA-Verschlüsselung}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{itemize}
+    \item \hl{Schlüsselerzeugung:} durch $GenRSA(n)$ erhalten wir $(N,e,d)$
+    \begin{itemize}
+        \item sk geheimer Schlüssel, pk öffentlicher Schlüssel
+    \end{itemize}
+
+    \item \hl{Verschlüsselung:} $c = m^e \mod N$
+    \item \hl{Entschlüsselung:} $m = c^d \mod N$
+\end{itemize}
+
+\subsubsection{Einschub: Homomorphe Verschlüsselung}
+Verschlüsselungsverfahren heißt \textbf{(multiplikativ) homorph}, wenn
+\[
+    Enc(pk, m_0) \cdot Enc(pk, m_1) \equiv Enc(pk, m_0 \cdot m_1)
+\]
+Produkt zweier verschlüsselter Nachrichten entspricht Verschlüsselung des Produkts\\
+Textbuch RSA ist \hl{homomorph}:
+\[
+    (m_0^e \mod N) \cdot (m_1^e \mod N) = (m_0 \cdot m_1)^e \mod N
+\]
+\begin{itemize}
+    \item wir können Operationen auf dem Klartext ausführen, ohne entschlüsseln zu müssen
+\end{itemize}
+
+\noindent\textbf{Sicherheit von Textbuch RSA}
+\begin{itemize}
+    \item Textbuch RSA Verschlüsselung ist \textbf{nicht} IND-CPA sicher
+    \begin{itemize}
+        \item Grund: Die Verschlüsselung ist \hl{deterministisch}
+    \end{itemize}
+
+    \item \hl{Faust-Regel:} \textbf{Kein deterministisches PKE ist IND-CPA sicher.}
+    \begin{itemize}
+        \item irgendwo muss immer Zufälligkeit enthalten sein
+    \end{itemize}
+\end{itemize}
+\textbf{RSA OAEP}
+\begin{itemize}
+    \item Zufälligkeit hinzufügen (z.B. einfach irgendwelche Bits noch dran hängen)
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{/Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/rsa-oaep.png}
+    \caption{RSA OAEP}
+    \label{fig:enter-label}
+\end{figure}
+\textbf{Angriffe auf RSA-basierte Chiffren}
+\begin{itemize}
+    \item Textbuch RSA ist \hl{fast immer unsicher} in der Praxis, daher nicht verwenden
+    \item Angtriffe durch Ausnutzen von \hl{Padding-Fehlern} (Padding-Oracle Attacks)
+    \item Angriffe bei \hl{kleinen Exponenten $e$} bzw. Teilwissen über einen Primfaktor
+\end{itemize}
+\subsection{Das Elgamal Verschlüsselungsverfahren}
+\textbf{Idee:}
+\begin{itemize}
+    \item basiert auf der Schwierigkeit diskrete Logarithmen zu berechnen
+    \item zyklische Gruppe $\mathbb{G}$ der Ordnung $q$ mit Generator $g$ und $q$ prim
+    \item wählen zufälliges $h \in \mathbb{G}$
+    \item suchen einen Wert $x$, sodass $g^x = h$
+\end{itemize}
+\textbf{Elgamal Verschlüsselung (1985)}
+\begin{itemize}
+    \item öffentliche Parameter: Gruppe $\mathbb{G}$ der Ordnung $q$ mit Generator $g$
+\end{itemize}
+\hl{Schlüsselerzeugung:}
+\begin{itemize}
+    \item wähle zufällig $sk= x \longleftarrow \mathbb{Z}_q$
+    \item berechne $pk = g^x \in \mathbb{G}$
+\end{itemize}
+\hl{Verschlüsselung (Nachricht $m \in \mathbb{G}$):}
+\begin{itemize}
+    \item wähle zufällig $r \longleftarrow \mathbb{Z}_q$ 
+    \item berechne $c_0 = g^r$ (erster Teil des Chiffretextes) und $c_1 = m \cdot (pk)^r$ (zweiter Teil des Chiffretextes)
+    \item Ausgabe $c = (c_0, c_1)$
+\end{itemize}
+\hl{Entschlüsselung (Chiffretext $c= (c_0, c_1) \in \mathbb{G}^2$)}
+\begin{itemize}
+    \item $m = c_1 \cdot c_0 ^{-sk}$
 \end{itemize}
 \end{document}
 
