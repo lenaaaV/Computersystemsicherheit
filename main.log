@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.22)  8 DEC 2024 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.22)  19 DEC 2024 13:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -139,10 +139,20 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count270
 \l__lipsum_a_int=\count271
 \l__lipsum_b_int=\count272
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks23
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
  (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks23
+\pgfutil@everybye=\toks24
 \pgfutil@tempdima=\dimen158
 \pgfutil@tempdimb=\dimen159
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -154,10 +164,10 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks27
 ))
 \pgf@x=\dimen160
 \pgf@y=\dimen161
@@ -175,9 +185,9 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \c@pgf@countb=\count274
 \c@pgf@countc=\count275
 \c@pgf@countd=\count276
-\t@pgf@toka=\toks27
-\t@pgf@tokb=\toks28
-\t@pgf@tokc=\toks29
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
 \pgf@sys@id@count=\count277
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
@@ -199,9 +209,9 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 \pgfmath@dimen=\dimen170
 \pgfmath@count=\count280
 \pgfmath@box=\box55
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count281
 )) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -282,15 +292,15 @@ Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks33
-\verbatim@line=\toks34
+\every@verbatim=\toks34
+\verbatim@line=\toks35
 \verbatim@in@stream=\read4
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
  (/usr/local/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks35
+\@envbody=\toks36
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count285
@@ -317,7 +327,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks36
+\@emptytoks=\toks37
 \ex@=\dimen198
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -355,33 +365,33 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \dotsspace@=\muskip16
 \c@parentequation=\count296
 \dspbrk@lvl=\count297
-\tag@help=\toks37
+\tag@help=\toks38
 \row@=\count298
 \column@=\count299
 \maxfields@=\count300
-\andhelp@=\toks38
+\andhelp@=\toks39
 \eqnshift@=\dimen257
 \alignsep@=\dimen258
 \tagshift@=\dimen259
 \tagwidth@=\dimen260
 \totwidth@=\dimen261
 \lineht@=\dimen262
-\@envbody=\toks39
+\@envbody=\toks40
 \multlinegap=\skip63
 \multlinetaggap=\skip64
-\mathdisplay@stack=\toks40
+\mathdisplay@stack=\toks41
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/soul/soul.sty
 Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/soul/soul-ori.sty
 Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
-\SOUL@word=\toks41
-\SOUL@lasttoken=\toks42
-\SOUL@syllable=\toks43
-\SOUL@cmds=\toks44
-\SOUL@buffer=\toks45
-\SOUL@token=\toks46
+\SOUL@word=\toks42
+\SOUL@lasttoken=\toks43
+\SOUL@syllable=\toks44
+\SOUL@cmds=\toks45
+\SOUL@buffer=\toks46
+\SOUL@token=\toks47
 \SOUL@syllgoal=\dimen263
 \SOUL@syllwidth=\dimen264
 \SOUL@charkern=\dimen265
@@ -470,23 +480,29 @@ LaTeX Warning: Label `fig:enter-label' multiply defined.
 
 LaTeX Warning: Label `fig:enter-label' multiply defined.
 
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
+
+LaTeX Warning: Label `fig:enter-label' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
@@ -494,12 +510,12 @@ LaTeX Font Info:    ... okay on input line 50.
 \scratchbox=\box72
 \nofMPsegments=\count306
 \nofMParguments=\count307
-\everyMPshowfont=\toks47
+\everyMPshowfont=\toks48
 \MPscratchCnt=\count308
 \MPscratchDim=\dimen273
 \MPnumerator=\count309
 \makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks48
+\everyMPtoPDFconversion=\toks49
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -542,17 +558,25 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc [1])
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
  [2] [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 222--227
+Underfull \hbox (badness 10000) in paragraph at lines 223--228
 
  []
 
@@ -560,139 +584,155 @@ Underfull \hbox (badness 10000) in paragraph at lines 222--227
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/enc.png, id=42, 1121.18875pt x 226.8475pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/enc.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/enc.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/enc.png  used on input line 407.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/enc.png  used on input line 408.
 (pdftex.def)             Requested size: 338.58632pt x 68.50475pt.
  [9 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/enc.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich.png, id=48, 1330.9725pt x 357.335pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich.png  used on input line 441.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich.png  used on input line 442.
 (pdftex.def)             Requested size: 338.58632pt x 90.89839pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ind-cca.png, id=49, 1419.3025pt x 352.31625pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ind-cca.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ind-cca.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ind-cca.png  used on input line 471.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ind-cca.png  used on input line 472.
 (pdftex.def)             Requested size: 338.58632pt x 84.0469pt.
  [10 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ind-cca.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/xor.png, id=55, 1150.2975pt x 353.32pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/xor.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/xor.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/xor.png  used on input line 517.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/xor.png  used on input line 518.
 (pdftex.def)             Requested size: 338.58632pt x 103.99667pt.
  [11 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/xor.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich-ott.png, id=61, 1299.85625pt x 337.26pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich-ott.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich-ott.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich-ott.png  used on input line 553.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich-ott.png  used on input line 554.
 (pdftex.def)             Requested size: 338.58632pt x 87.84506pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ott-key.png, id=62, 1205.50375pt x 291.0875pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ott-key.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ott-key.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ott-key.png  used on input line 561.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ott-key.png  used on input line 562.
 (pdftex.def)             Requested size: 338.58632pt x 81.75267pt.
  [12 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sich-ott.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ott-key.png>] [13] [14]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Des.png, id=76, 1147.28625pt x 306.14375pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Des.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Des.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Des.png  used on input line 685.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Des.png  used on input line 686.
 (pdftex.def)             Requested size: 338.58632pt x 90.34898pt.
  [15 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Des.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ecb.png, id=81, 1125.20375pt x 546.04pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ecb.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ecb.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ecb.png  used on input line 774.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ecb.png  used on input line 775.
 (pdftex.def)             Requested size: 290.22107pt x 140.83391pt.
  [16 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ecb.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc1.png, id=86, 1186.4325pt x 525.965pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc1.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc1.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc1.png  used on input line 820.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc1.png  used on input line 821.
 (pdftex.def)             Requested size: 290.22107pt x 128.6579pt.
  [17 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc1.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc2.png, id=91, 1082.0425pt x 522.95375pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc2.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc2.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc2.png  used on input line 826.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc2.png  used on input line 827.
 (pdftex.def)             Requested size: 290.22107pt x 140.2578pt.
  [18 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc2.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ctr.png, id=97, 1221.56375pt x 506.89375pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ctr.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ctr.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ctr.png  used on input line 888.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ctr.png  used on input line 889.
 (pdftex.def)             Requested size: 290.22107pt x 120.42719pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Fehlerresistenz.png, id=98, 1217.54875pt x 521.95pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Fehlerresistenz.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Fehlerresistenz.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Fehlerresistenz.png  used on input line 895.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Fehlerresistenz.png  used on input line 896.
 (pdftex.def)             Requested size: 338.58632pt x 145.14946pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/vergl.png, id=99, 1234.6125pt x 498.86375pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/vergl.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/vergl.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/vergl.png  used on input line 902.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/vergl.png  used on input line 903.
 (pdftex.def)             Requested size: 338.58632pt x 136.81116pt.
  [19 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/ctr.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/Fehlerresistenz.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/vergl.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sicherheitsdef.png, id=106, 1384.17125pt x 589.20125pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sicherheitsdef.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sicherheitsdef.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sicherheitsdef.png  used on input line 918.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sicherheitsdef.png  used on input line 919.
 (pdftex.def)             Requested size: 338.58632pt x 144.1263pt.
  [20 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/sicherheitsdef.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/mac.png, id=111, 851.18pt x 310.15875pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/mac.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/mac.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/mac.png  used on input line 949.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/mac.png  used on input line 950.
 (pdftex.def)             Requested size: 290.22107pt x 105.75073pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/macs.png, id=112, 1106.1325pt x 211.79124pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/macs.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/macs.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/macs.png  used on input line 976.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/macs.png  used on input line 977.
 (pdftex.def)             Requested size: 290.22107pt x 55.56856pt.
  [21 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/mac.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/macs.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc-mac.png, id=118, 906.38625pt x 393.47pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc-mac.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc-mac.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc-mac.png  used on input line 1027.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc-mac.png  used on input line 1028.
 (pdftex.def)             Requested size: 290.22107pt x 125.98502pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbcmac.png, id=119, 1226.5825pt x 452.69125pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbcmac.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbcmac.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbcmac.png  used on input line 1037.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbcmac.png  used on input line 1038.
 (pdftex.def)             Requested size: 338.58632pt x 124.95673pt.
  [22 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbc-mac.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/cbcmac.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png, id=125, 871.255pt x 181.67876pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png  used on input line 1051.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png  used on input line 1052.
 (pdftex.def)             Requested size: 338.58632pt x 70.60214pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png, id=126, 1280.785pt x 536.0025pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png  used on input line 1082.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png  used on input line 1083.
 (pdftex.def)             Requested size: 241.84843pt x 101.21176pt.
  [23 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/hashundmac.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/encrthenmac.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png, id=132, 1166.3575pt x 250.9375pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png  used on input line 1109.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png  used on input line 1110.
 (pdftex.def)             Requested size: 338.58632pt x 72.84276pt.
  [24 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/asym.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png, id=138, 1248.665pt x 337.26pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png  used on input line 1134.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png  used on input line 1135.
 (pdftex.def)             Requested size: 290.22107pt x 78.3864pt.
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png, id=139, 1393.205pt x 484.81125pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png  used on input line 1168.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png  used on input line 1169.
 (pdftex.def)             Requested size: 338.58632pt x 117.8218pt.
  [25 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/funktionaleDef.png> </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcpa-pke.png>]
 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png, id=145, 1409.265pt x 323.2075pt>
 File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png Graphic file (type png)
 <use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png>
-Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png  used on input line 1183.
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png  used on input line 1184.
 (pdftex.def)             Requested size: 338.58632pt x 77.65028pt.
- [26 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png>] (./main.aux)
+ [26 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/indcca-pke.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1258--1259
+
+ []
+
+</Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/txtbuch.png, id=151, 1394.20876pt x 608.2725pt>
+File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/txtbuch.png Graphic file (type png)
+<use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/txtbuch.png>
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/txtbuch.png  used on input line 1263.
+(pdftex.def)             Requested size: 338.58632pt x 147.71474pt.
+[27 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/txtbuch.png>]
+</Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/rsa-oaep.png, id=156, 1234.6125pt x 695.59875pt>
+File: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/rsa-oaep.png Graphic file (type png)
+<use /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/rsa-oaep.png>
+Package pdftex.def Info: /Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/rsa-oaep.png  used on input line 1310.
+(pdftex.def)             Requested size: 338.58632pt x 190.76485pt.
+ [28 </Users/lenavo/Desktop/3.Semester/Computersystemsicherheit/img/rsa-oaep.png>] [29] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -703,18 +743,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15715 strings out of 474116
- 324306 string characters out of 5743682
+ 16255 strings out of 474116
+ 331459 string characters out of 5743682
  1949187 words of memory out of 5000000
- 37823 multiletter control sequences out of 15000+600000
- 561037 words of font info for 46 fonts, out of 8000000 for 9000
+ 38344 multiletter control sequences out of 15000+600000
+ 562282 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,12n,93p,854b,493s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (27 pages, 4048924 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (30 pages, 4536675 bytes).
 PDF statistics:
- 194 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 213 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 
